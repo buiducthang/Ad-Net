@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+         <a href="{% url 'eSignUp' %}" id="ao">Ao</a>
+         <a href="#" id="quan">Quan</a>
+         <a href="#" id="vay">Vay</a>
+          <!-- <form method="/detail" method="GET" id="fgoods"> -->
+             <!-- {% csrf_token %} -->
+             <input type="hidden" name="goods" value="asd" id="goods">
+         <!-- </form>     -->
+    </body>
+
+    <script>
+        $(document).ready(function(){
+            $('#ao').click(function(){
+                $('#goods').val('ao');
+                $.ajax({
+                    url: '{% url 'eDetail' %}',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {
+                        goods: $('#goods').val()
+                    },
+                    success: function(data){
+                        console.log(data);
+                    }
+                });  
+            });
+
+            $('#quan').click(function(){
+                $('#goods').val('quan');
+                $.ajax({
+                    url: '{% url 'eDetail' %}',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {
+                        goods: $('#goods').val()
+                    },
+                    success: function(data){
+                        console.log(data);
+                    }
+                });  
+            });
+
+            $('#vay').click(function(){
+                $('#goods').val('vay');
+                $.ajax({
+                    url: '{% url 'eDetail' %}',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {
+                        goods: $('#goods').val()
+                    },
+                    success: function(data){
+                        console.log(data);
+                    }
+                });  
+            });
+        });
+    </script>
+</html>
