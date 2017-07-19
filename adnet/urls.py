@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from ad import views
+from ecommerce import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.Get, name="get"),
-    url(r'^ajax/',views.AjaxRequest, name="ajax"),
+    url(r'^$', include('ad.urls')),
+    url(r'^ecommerce/', include('ecommerce.urls')),
 ]

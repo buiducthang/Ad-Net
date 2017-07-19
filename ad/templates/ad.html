@@ -20,7 +20,7 @@
             console.log("add click");
             
             $.ajax({
-                url: '{% url 'ajax' %}',
+                url: '/ajax',
                 type: 'POST',
                 data: {
                     ajaxdata:$('#ajaxdata').val(),
