@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+    <button type="" id="ajax" >Ajax</button>
+    {% csrf_token %}
+    <input type="hidden" id="ajaxdata" value="ajax request">
+    
+    </body>
+
+    <script>
+        $(document).ready(function(){
+            $('#ajax').click(function(){
+            console.log("add click");
+            
+            $.ajax({
+                url: '{% url 'ajax' %}',
+                type: 'POST',
+                data: {
+                    ajaxdata:$('#ajaxdata').val(),
+                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+                },
+                header: {
+                    'Content-Type': 'application/json'
+                },
+                success: function(response){
+                    console.log("add ok");
+                }
+            });
+        });
+        });
+    </script>
+</html>
