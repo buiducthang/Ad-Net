@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        {% csrf_token %}
+        <span id="ads"></span>
+        <button type="" id="btn">Button</button>
+    </body>
+
+    <script>
+        $(document).ready(function(){
+            $('#btn').click(function(){
+                $.ajax({
+                    url: '{% url 'ads' %}',
+                    type: 'POST',
+                    data: {
+                        userid:'AV1d8NNhxaMscw0-RWGk',
+                        csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+                    },
+                    header: {
+                        'Content-Type': 'application/json'
+                    },
+                    success: function(response){
+                        console.log(response);
+                        $('#ads').text(response.result)
+                    }
+                });
+            });
+        });
+    </script>
+</html>

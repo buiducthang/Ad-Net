@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from elasticsearch import Elasticsearch
 from django.http import *
+from django.template import RequestContext
+from django.shortcuts import render_to_response
 
 import json
 
@@ -117,3 +119,10 @@ def Detail(request):
         #print update
         rs_update = {"update":0}
         return HttpResponse(goods)
+
+#Test cookie
+def cookie(request):
+    response = render_to_response('index-cookie.html')
+    #set cookie
+    response.set_cookie('cookie', "test cookie")
+    return response

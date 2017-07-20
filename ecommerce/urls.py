@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^signin/', views.SignIn, name="eSignIn"),
     url(r'^goods/', views.Goods, name="eGoods"),
     url(r'^detail/', views.Detail, name="eDetail"),
+    url(r'^cookie/', views.cookie, name="cookie")
     # url(r'^ecommerce/SignOut', views.SignOut, name="eSignOut"),
 ]
