@@ -126,3 +126,34 @@ def cookie(request):
     #set cookie
     response.set_cookie('cookie', "test cookie")
     return response
+
+def Index(request):
+    return render(request,'index.html')
+def About(request):
+    return render(request,'about.html')
+def Care(request):
+    return render(request,'care.html')
+def Codes(request):
+    return render(request,'codes.html')
+def Contact(request):
+    return render(request,'contact.html')
+def Faqs(request):
+    return render(request,'faqs.html')
+def Hold(request):
+    return render(request,'hold.html')
+def Kitchen(request):
+    return render(request,'kitchen.html')
+def Login(request):
+    return render(request,'login.html')
+def Offer(request):
+    return render(request,'offer.html')
+def Register(request):
+    return render(request,'register.html')
+def Shipping(request):
+    return render(request,'shipping.html')
+def Single(request):
+    return render(request,'Single.html')
+def Terms(request):
+    return render(request,'terms.html')
+def Wishlist(request):
+    return render(request,'wishlist.html')
