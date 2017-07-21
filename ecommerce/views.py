@@ -127,33 +127,38 @@ def cookie(request):
     response.set_cookie('cookie', "test cookie")
     return response
 
+def setAds(request):
+    if(request.is_ajax() and request.POST):
+        base_url = 'ecommerce'
+        productName = request.POST.get('productName')
+        print productName
+        imgSrc = request.POST.get('imgSrc')
+        print imgSrc
+        url = base_url + '/'+ request.POST.get('url')
+        print url
+        response = HttpResponse('Xong!')
+        response.set_cookie('product_name',productName)
+        response.set_cookie('img_src', imgSrc)
+        response.set_cookie('url',url)
+        return response
+
 def Index(request):
     return render(request,'index.html')
 def About(request):
     return render(request,'about.html')
-def Care(request):
-    return render(request,'care.html')
 def Codes(request):
     return render(request,'codes.html')
-def Contact(request):
-    return render(request,'contact.html')
 def Faqs(request):
     return render(request,'faqs.html')
-def Hold(request):
-    return render(request,'hold.html')
-def Kitchen(request):
-    return render(request,'kitchen.html')
-def Login(request):
-    return render(request,'login.html')
-def Offer(request):
-    return render(request,'offer.html')
-def Register(request):
-    return render(request,'register.html')
-def Shipping(request):
-    return render(request,'shipping.html')
+def Icons(request):
+    return render(request,'icons.html')
+def Mail(request):
+    return render(request,'mail.html')
+def Products(request):
+    return render(request,'products.html')
+def Products1(request):
+    return render(request,'products1.html')
+def Products2(request):
+    return render(request,'products2.html')
 def Single(request):
-    return render(request,'Single.html')
-def Terms(request):
-    return render(request,'terms.html')
-def Wishlist(request):
-    return render(request,'wishlist.html')
+    return render(request,'single.html')

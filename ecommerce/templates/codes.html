@@ -6,16 +6,15 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Big store a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Codes :: w3layouts</title>
+    <title>Electronic Store a Ecommerce Online Shopping Category Bootstrap Responsive Website Template | Short Codes :: w3layouts</title>
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta property="og:title" content="Vide" />
-    <meta name="keywords" content="Big store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <meta name="keywords" content="Electronic Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript">
         addEventListener("load", function() {
             setTimeout(hideURLbar, 0);
@@ -26,15 +25,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         }
     </script>
     <!-- //for-mobile-apps -->
-    <link href="{% static 'css/bootstrap.css'%}" rel='stylesheet' type='text/css' />
     <!-- Custom Theme files -->
-    <link href="{% static 'css/style.css'%}" rel='stylesheet' type='text/css' />
+    <link href="{%static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{%static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- font-awesome icons -->
+    <link href="{%static 'css/font-awesome.css' %}" rel="stylesheet">
+    <!-- //font-awesome icons -->
     <!-- js -->
-    <script src="{% static 'js/jquery-1.11.1.min.js"></script>
+    <script src="{%static 'js/jquery.min.js' %}"></script>
     <!-- //js -->
-    <!-- start-smoth-scrolling -->
-    <script type="text/javascript" src="{% static 'js/move-top.js'%}"></script>
-    <script type="text/javascript" src="{% static 'js/easing.js'%}"></script>
+    <!-- web fonts -->
+    <link href='//fonts.googleapis.com/css?family=Glegoo:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <!-- //web fonts -->
+    <!-- for bootstrap working -->
+    <script type="text/javascript" src="{%static 'js/bootstrap-3.1.1.min.js' %}"></script>
+    <!-- //for bootstrap working -->
+    <!-- start-smooth-scrolling -->
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event) {
@@ -45,416 +53,348 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             });
         });
     </script>
-    <!-- start-smoth-scrolling -->
-    <link href="{% static 'css/font-awesome.css'%}" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
-    <!--- start-rate---->
-    <script src="{% static 'js/jstarbox.js'%}"></script>
-    <link rel="stylesheet" href="{% static 'css/jstarbox.css'%}" type="text/css" media="screen" charset="utf-8" />
-    <script type="text/javascript">
-        jQuery(function() {
-            jQuery('.starbox').each(function() {
-                var starbox = jQuery(this);
-                starbox.starbox({
-                    average: starbox.attr('data-start-value'),
-                    changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
-                    ghosting: starbox.hasClass('ghosting'),
-                    autoUpdateAverage: starbox.hasClass('autoupdate'),
-                    buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
-                    stars: starbox.attr('data-star-count') || 5
-                }).bind('starbox-value-changed', function(event, value) {
-                    if (starbox.hasClass('random')) {
-                        var val = Math.random();
-                        starbox.next().text(' ' + val);
-                        return val;
-                    }
-                })
-            });
-        });
-    </script>
-    <!---//End-rate---->
-
+    <!-- //end-smooth-scrolling -->
 </head>
 
 <body>
-    <a href="offer.html"><img src="{% static 'images/download.png'%}" class="img-head" alt=""></a>
-    <div class="header">
-
-        <div class="container">
-
-            <div class="logo">
-                <h1><a href="index.html"><b>T<br>H<br>E</b>Big Store<span>The Best Supermarket</span></a></h1>
-            </div>
-            <div class="head-t">
-                <ul class="card">
-                    <li><a href="wishlist.html"><i class="fa fa-heart" aria-hidden="true"></i>Wishlist</a></li>
-                    <li><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
-                    <li><a href="register.html"><i class="fa fa-arrow-right" aria-hidden="true"></i>Register</a></li>
-                    <li><a href="about.html"><i class="fa fa-file-text-o" aria-hidden="true"></i>Order History</a></li>
-                    <li><a href="shipping.html"><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>
-                </ul>
-            </div>
-
-            <div class="header-ri">
-                <ul class="social-top">
-                    <li><a href="#" class="icon facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>
-                    <li><a href="#" class="icon twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span></span></a></li>
-                    <li><a href="#" class="icon pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i><span></span></a></li>
-                    <li><a href="#" class="icon dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i><span></span></a></li>
-                </ul>
-            </div>
-
-
-            <div class="nav-top">
-                <nav class="navbar navbar-default">
-
-                    <div class="navbar-header nav_2">
-                        <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-
-
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                        <ul class="nav navbar-nav ">
-                            <li><a href="index.html" class="hyper "><span>Home</span></a></li>
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown"><span>Kitchen<b class="caret"></b></span></a>
-                                <ul class="dropdown-menu multi">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <ul class="multi-column-dropdown">
-
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Water & Beverages</a></li>
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Fruits & Vegetables</a></li>
-                                                <li>
-                                                    <a href="kitchen.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Staples</a>
-                                                </li>
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Branded Food</a></li>
-
-                                            </ul>
-
-                                        </div>
-                                        <div class="col-sm-3">
-
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Breakfast &amp; Cereal</a></li>
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Snacks</a></li>
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Spices</a></li>
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Biscuit &amp; Cookie</a></li>
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Sweets</a></li>
-
-                                            </ul>
-
-                                        </div>
-                                        <div class="col-sm-3">
-
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pickle & Condiment</a></li>
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Instant Food</a></li>
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Dry Fruit</a></li>
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Tea &amp; Coffee</a></li>
-
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3 w3l">
-                                            <a href="kitchen.html"><img src="{% static 'images/me.png'%}" class="img-responsive" alt=""></a>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-
-                                <a href="#" class="dropdown-toggle hyper" data-toggle="dropdown"><span> Personal Care <b class="caret"></b></span></a>
-                                <ul class="dropdown-menu multi multi1">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Ayurvedic </a></li>
-                                                <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Baby Care</a></li>
-                                                <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Cosmetics</a></li>
-                                                <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Deo & Purfumes</a></li>
-
-                                            </ul>
-
-                                        </div>
-                                        <div class="col-sm-3">
-
-                                            <ul class="multi-column-dropdown">
-                                                <li>
-                                                    <a href="care.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Hair Care </a>
-                                                </li>
-                                                <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Oral Care</a></li>
-                                                <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Personal Hygiene</a></li>
-                                                <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Skin care</a></li>
-
-                                            </ul>
-
-                                        </div>
-                                        <div class="col-sm-3">
-
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Fashion Accessories </a></li>
-                                                <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Grooming Tools</a></li>
-                                                <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Shaving Need</a></li>
-                                                <li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Sanitary Needs</a></li>
-
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3 w3l">
-                                            <a href="care.html"><img src="{% static 'images/me1.png'%}" class="img-responsive" alt=""></a>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle hyper" data-toggle="dropdown"><span>Household<b class="caret"></b></span></a>
-                                <ul class="dropdown-menu multi multi2">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Cleaning Accessories</a></li>
-                                                <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>CookWear</a></li>
-                                                <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Detergents</a></li>
-                                                <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Gardening Needs</a></li>
-
-                                            </ul>
-
-                                        </div>
-                                        <div class="col-sm-3">
-
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Kitchen & Dining</a></li>
-                                                <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>KitchenWear</a></li>
-                                                <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pet Care</a></li>
-                                                <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Plastic Wear</a></li>
-
-                                            </ul>
-
-                                        </div>
-                                        <div class="col-sm-3">
-
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pooja Needs</a></li>
-                                                <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Serveware</a></li>
-                                                <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Safety Accessories</a></li>
-                                                <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Festive Decoratives </a></li>
-
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3 w3l">
-                                            <a href="hold.html"><img src="{% static 'images/me2.png'%}" class="img-responsive" alt=""></a>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </ul>
-                            </li>
-
-                            <li class="active">
-                                <a href="codes.html" class="hyper"> <span>Codes</span></a>
-                            </li>
-                            <li><a href="contact.html" class="hyper"><span>Contact Us</span></a></li>
-                        </ul>
-                    </div>
-                </nav>
-                <div class="cart">
-
-                    <span class="fa fa-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
+    <!-- header modal -->
+    <div class="modal fade" id="myModal88" tabindex="-1" role="dialog" aria-labelledby="myModal88" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Don't Wait, Login now!</h4>
                 </div>
-                <div class="clearfix"></div>
+                <div class="modal-body modal-body-sub">
+                    <div class="row">
+                        <div class="col-md-8 modal_body_left modal_body_left1" style="border-right: 1px dotted #C2C2C2;padding-right:3em;">
+                            <div class="sap_tabs">
+                                <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                                    <ul>
+                                        <li class="resp-tab-item" aria-controls="tab_item-0"><span>Sign in</span></li>
+                                        <li class="resp-tab-item" aria-controls="tab_item-1"><span>Sign up</span></li>
+                                    </ul>
+                                    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+                                        <div class="facts">
+                                            <div class="register">
+                                                <form action="#" method="post"> {% csrf_token %}
+                                                    <input name="Email" placeholder="Email Address" type="text" required="">
+                                                    <input name="Password" placeholder="Password" type="password" required="">
+                                                    <div class="sign-up">
+                                                        <input type="submit" value="Sign in" />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
+                                        <div class="facts">
+                                            <div class="register">
+                                                <form action="#" method="post"> {% csrf_token %}
+                                                    <input placeholder="Name" name="Name" type="text" required="">
+                                                    <input placeholder="Email Address" name="Email" type="email" required="">
+                                                    <input placeholder="Password" name="Password" type="password" required="">
+                                                    <input placeholder="Confirm Password" name="Password" type="password" required="">
+                                                    <div class="sign-up">
+                                                        <input type="submit" value="Create Account" />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script src="{%static 'js/easyResponsiveTabs.js' %}" type="text/javascript"></script>
+                            <script type="text/javascript">
+                                $(document).ready(function() {
+                                    $('#horizontalTab').easyResponsiveTabs({
+                                        type: 'default', //Types: default, vertical, accordion           
+                                        width: 'auto', //auto or any width like 600px
+                                        fit: true // 100% fit in a container
+                                    });
+                                });
+                            </script>
+                            <div id="OR" class="hidden-xs">OR</div>
+                        </div>
+                        <div class="col-md-4 modal_body_right modal_body_right1">
+                            <div class="row text-center sign-with">
+                                <div class="col-md-12">
+                                    <h3 class="other-nw">Sign in with</h3>
+                                </div>
+                                <div class="col-md-12">
+                                    <ul class="social">
+                                        <li class="social_facebook">
+                                            <a href="#" class="entypo-facebook"></a>
+                                        </li>
+                                        <li class="social_dribbble">
+                                            <a href="#" class="entypo-dribbble"></a>
+                                        </li>
+                                        <li class="social_twitter">
+                                            <a href="#" class="entypo-twitter"></a>
+                                        </li>
+                                        <li class="social_behance">
+                                            <a href="#" class="entypo-behance"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
-    <!---->
-    <!--banner-->
-    <div class="banner-top">
+    <!-- header modal -->
+    <!-- header -->
+    <div class="header" id="home1">
         <div class="container">
-            <h3>Codes</h3>
-            <h4><a href="index.html">Home</a><label>/</label>Codes</h4>
-            <div class="clearfix"> </div>
+            <div class="w3l_login">
+                <a href="#" data-toggle="modal" data-target="#myModal88"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+            </div>
+            <div class="w3l_logo">
+                <h1><a href="index.html">Electronic Store<span>Your stores. Your place.</span></a></h1>
+            </div>
+            <div class="search">
+                <input class="search_box" type="checkbox" id="search_box">
+                <label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
+                <div class="search_form">
+                    <form action="#" method="post"> {% csrf_token %}
+                        <input type="text" name="Search" placeholder="Search...">
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
+            </div>
+            <div class="cart cart box_1">
+                <form action="#" method="post" class="last">
+                    <input type="hidden" name="cmd" value="_cart" />
+                    <input type="hidden" name="display" value="1" />
+                    <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                </form>
+            </div>
         </div>
     </div>
-    <!-- typography -->
-    <div class="typrography">
+    <!-- //header -->
+    <!-- navigation -->
+    <div class="navigation">
         <div class="container">
-            <div class="spec ">
-                <h3>Short Codes</h3>
-                <div class="ser-t">
-                    <b></b>
-                    <span><i></i></span>
-                    <b class="line"></b>
+            <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header nav_2">
+                    <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
                 </div>
-            </div>
-            <div class="grid_3 grid_4 wow fadeInLeft animated" data-wow-delay=".5s">
-                <h3 class="bars">Headings</h3>
-                <div class="bs-example">
-                    <div class="mb-60">
-                        <h1>Heading H1</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe veniam quo consequuntur ad totam rem aliquid voluptates hic eos ullam, sequi nihil necessitatibus beatae perspiciatis perferendis, eveniet at esse vero molestiae
-                            debitis distinctio sunt modi. Repellat, eligendi, eius! Veritatis in veniam, tempora tempore ratione provident. Sunt nulla similique voluptates magni labore maxime tempore error sed necessitatibus ab. Quisquam, nisi.</p>
-                        <h2>Heading H2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe veniam quo consequuntur ad totam rem aliquid voluptates hic eos ullam, sequi nihil necessitatibus beatae perspiciatis perferendis, eveniet at esse vero molestiae
-                            debitis distinctio sunt modi. Repellat, eligendi, eius! Veritatis in veniam, tempora tempore ratione provident. Sunt nulla similique voluptates magni labore maxime tempore error sed necessitatibus ab. Quisquam, nisi.</p>
-                        <h3>Heading H3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe veniam quo consequuntur ad totam rem aliquid voluptates hic eos ullam, sequi nihil necessitatibus beatae perspiciatis perferendis, eveniet at esse vero molestiae
-                            debitis distinctio sunt modi. Repellat, eligendi, eius! Veritatis in veniam, tempora tempore ratione provident. Sunt nulla similique voluptates magni labore maxime tempore error sed necessitatibus ab. Quisquam, nisi.</p>
-                        <h4>Heading H4</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe veniam quo consequuntur ad totam rem aliquid voluptates hic eos ullam, sequi nihil necessitatibus beatae perspiciatis perferendis, eveniet at esse vero molestiae
-                            debitis distinctio sunt modi. Repellat, eligendi, eius! Veritatis in veniam, tempora tempore ratione provident. Sunt nulla similique voluptates magni labore maxime tempore error sed necessitatibus ab. Quisquam, nisi.</p>
-                        <h5>Heading H5</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe veniam quo consequuntur ad totam rem aliquid voluptates hic eos ullam, sequi nihil necessitatibus beatae perspiciatis perferendis, eveniet at esse vero molestiae
-                            debitis distinctio sunt modi. Repellat, eligendi, eius! Veritatis in veniam, tempora tempore ratione provident. Sunt nulla similique voluptates magni labore maxime tempore error sed necessitatibus ab. Quisquam, nisi.</p>
-                        <h6>Heading H6</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe veniam quo consequuntur ad totam rem aliquid voluptates hic eos ullam, sequi nihil necessitatibus beatae perspiciatis perferendis, eveniet at esse vero molestiae
-                            debitis distinctio sunt modi. Repellat, eligendi, eius! Veritatis in veniam, tempora tempore ratione provident. Sunt nulla similique voluptates magni labore maxime tempore error sed necessitatibus ab. Quisquam, nisi.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid_3 grid_5 wow fadeInRight animated" data-wow-delay=".5s">
-                <h3 class="bars">Buttons</h3>
-                <h1 class="t-button">
-                    <a href="#"><span class="label label-default">Default</span></a>
-                    <a href="#"><span class="label label-primary">Primary</span></a>
-                    <a href="#"><span class="label label-success">Success</span></a>
-                    <a href="#"><span class="label label-info">Info</span></a>
-                    <a href="#"><span class="label label-warning">Warning</span></a>
-                    <a href="#"><span class="label label-danger">Danger</span></a>
-                </h1>
-                <h2 class="t-button">
-                    <a href="#"><span class="label label-default">Default</span></a>
-                    <a href="#"><span class="label label-primary">Primary</span></a>
-                    <a href="#"><span class="label label-success">Success</span></a>
-                    <a href="#"><span class="label label-info">Info</span></a>
-                    <a href="#"><span class="label label-warning">Warning</span></a>
-                    <a href="#"><span class="label label-danger">Danger</span></a>
-                </h2>
-                <h3 class="t-button">
-                    <a href="#"><span class="label label-default">Default</span></a>
-                    <a href="#"><span class="label label-primary">Primary</span></a>
-                    <a href="#"><span class="label label-success">Success</span></a>
-                    <a href="#"><span class="label label-info">Info</span></a>
-                    <a href="#"><span class="label label-warning">Warning</span></a>
-                    <a href="#"><span class="label label-danger">Danger</span></a>
-                </h3>
-                <h4 class="typ1 t-button">
-                    <a href="#"><span class="label label-default">Default</span></a>
-                    <a href="#"><span class="label label-primary">Primary</span></a>
-                    <a href="#"><span class="label label-success">Success</span></a>
-                    <a href="#"><span class="label label-info">Info</span></a>
-                    <a href="#"><span class="label label-warning">Warning</span></a>
-                    <a href="#"><span class="label label-danger">Danger</span></a>
-                </h4>
-                <h5 class="typ1 t-button">
-                    <a href="#"><span class="label label-default">Default</span></a>
-                    <a href="#"><span class="label label-primary">Primary</span></a>
-                    <a href="#"><span class="label label-success">Success</span></a>
-                    <a href="#"><span class="label label-info">Info</span></a>
-                    <a href="#"><span class="label label-warning">Warning</span></a>
-                    <a href="#"><span class="label label-danger">Danger</span></a>
-                </h5>
-                <h6 class="typ1 t-button">
-                    <a href="#"><span class="label label-default">Default</span></a>
-                    <a href="#"><span class="label label-primary">Primary</span></a>
-                    <a href="#"><span class="label label-success">Success</span></a>
-                    <a href="#"><span class="label label-info">Info</span></a>
-                    <a href="#"><span class="label label-warning">Warning</span></a>
-                    <a href="#"><span class="label label-danger">Danger</span></a>
-                </h6>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-6 mb-60">
-                <h4 class="text-blue title-border mb-30 bars">Alert Boxes</h4>
-                <div class="alert alert-success alert-dismissable">
-                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button"> × </button> Success! Well done its submitted. </div>
-                <div class="alert alert-info alert-dismissable">
-                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button"> × </button> Info! take this info. </div>
-                <div class="alert alert-warning alert-dismissable">
-                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button"> × </button> Warning ! Dont submit this. </div>
-                <div class="alert alert-danger alert-dismissable">
-                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button"> × </button> Error ! Change few things. </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-6 mb-60">
-                <h4 class="text-blue title-border mb-30 bars">Tab</h4>
-                <div class="horizontal-tab">
-                    <ul class="nav nav-tabs">
-                        <li class=""><a href="#tab1" data-toggle="tab" aria-expanded="false">Tab1</a></li>
-                        <li class=""><a href="#tab2" data-toggle="tab" aria-expanded="false">Tab2</a></li>
-                        <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false">Tab3</a></li>
-                        <li class="active"><a href="#tab4" data-toggle="tab" aria-expanded="true">Tab4</a></li>
+                <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <!-- Mega Menu -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-column columns-3">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <ul class="multi-column-dropdown">
+                                            <h6>Mobiles</h6>
+                                            <li><a href="products.html">Mobile Phones</a></li>
+                                            <li><a href="products.html">Mp3 Players <span>New</span></a></li>
+                                            <li><a href="products.html">Popular Models</a></li>
+                                            <li><a href="products.html">All Tablets<span>New</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <ul class="multi-column-dropdown">
+                                            <h6>Accessories</h6>
+                                            <li><a href="products1.html">Laptop</a></li>
+                                            <li><a href="products1.html">Desktop</a></li>
+                                            <li><a href="products1.html">Wearables <span>New</span></a></li>
+                                            <li><a href="products1.html"><i>Summer Store</i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <ul class="multi-column-dropdown">
+                                            <h6>Home</h6>
+                                            <li><a href="products2.html">Tv</a></li>
+                                            <li><a href="products2.html">Camera</a></li>
+                                            <li><a href="products2.html">AC</a></li>
+                                            <li><a href="products2.html">Grinders</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="w3ls_products_pos">
+                                            <h4>30%<i>Off/-</i></h4>
+                                            <img src="{%static 'js/easyResponsiveTabs.js' %}" alt=" " class="img-responsive" />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="w3pages"><a href="#" class="dropdown-toggle act" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="icons.html">Web Icons</a></li>
+                                <li><a href="codes.html" class="act">Short Codes</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="mail.html">Mail Us</a></li>
                     </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane fade" id="tab1">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>Tab 1 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias atque autem fuga similique, mollitia impedit maxime sapiente omnis blanditiis qui iste aliquam, quisquam eos, earum.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ex hic, maiores excepturi, doloribus modi.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab2">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>Tab 2 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias atque autem fuga similique, mollitia impedit maxime sapiente omnis blanditiis qui iste aliquam, quisquam eos, earum.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ex hic, maiores excepturi, doloribus modi.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab3">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>Tab 3 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias atque autem fuga similique, mollitia impedit maxime sapiente omnis blanditiis qui iste aliquam, quisquam eos, earum.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ex hic, maiores excepturi, doloribus modi.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane active in" id="tab4">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>Tab 4 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias atque autem fuga similique, mollitia impedit maxime sapiente omnis blanditiis qui iste aliquam, quisquam eos, earum.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ex hic, maiores excepturi, doloribus modi.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- //navigation -->
+    <!-- banner -->
+    <div class="banner banner10">
+        <div class="container">
+            <h2>Short Codes</h2>
+        </div>
+    </div>
+    <!-- //banner -->
+    <!-- breadcrumbs -->
+    <div class="breadcrumb_dress">
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
+                <li>Short Codes</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //breadcrumbs -->
+    <!-- short codes -->
+    <div class="typo codes">
+        <div class="container">
+            <h3 class="agileits-title">Short Codes</h3>
+            <div class="grid_3 grid_4">
+                <h3 class="w3ls-hdg">Headings</h3>
+                <div class="bs-example w3layouts">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h1 id="h1.-bootstrap-heading">h1. Bootstrap heading<a class="anchorjs-link" href="#h1.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h1>
+                                </td>
+                                <td class="type-info w3l">Semibold 36px</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h2 id="h2.-bootstrap-heading">h2. Bootstrap heading<a class="anchorjs-link" href="#h2.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h2>
+                                </td>
+                                <td class="type-info w3l">Semibold 30px</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h3 id="h3.-bootstrap-heading">h3. Bootstrap heading<a class="anchorjs-link" href="#h3.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h3>
+                                </td>
+                                <td class="type-info w3l">Semibold 24px</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 id="h4.-bootstrap-heading">h4. Bootstrap heading<a class="anchorjs-link" href="#h4.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h4>
+                                </td>
+                                <td class="type-info w3l">Semibold 18px</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5 id="h5.-bootstrap-heading">h5. Bootstrap heading<a class="anchorjs-link" href="#h5.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h5>
+                                </td>
+                                <td class="type-info w3l">Semibold 14px</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6>h6. Bootstrap heading</h6>
+                                </td>
+                                <td class="type-info w3l">Semibold 12px</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="clearfix"></div>
-            <div class="grid_3 grid_5 wow fadeInLeft animated" data-wow-delay=".5s">
-                <h3 class="bars">Progress Bars</h3>
+            <div class="grid_3 grid_5">
+                <h3 class="w3ls-hdg">Labels</h3>
+                <div class="but_list w3layouts">
+                    <h1>
+                        <span class="label label-default">Default</span>
+                        <span class="label label-primary">Primary</span>
+                        <span class="label label-success">Success</span>
+                        <span class="label label-info">Info</span>
+                        <span class="label label-warning">Warning</span>
+                        <span class="label label-danger">Danger</span>
+                    </h1>
+                    <h2>
+                        <span class="label label-default">Default</span>
+                        <span class="label label-primary">Primary</span>
+                        <span class="label label-success">Success</span>
+                        <span class="label label-info">Info</span>
+                        <span class="label label-warning">Warning</span>
+                        <span class="label label-danger">Danger</span>
+                    </h2>
+                    <h3>
+                        <span class="label label-default">Default</span>
+                        <span class="label label-primary">Primary</span>
+                        <span class="label label-success">Success</span>
+                        <span class="label label-info">Info</span>
+                        <span class="label label-warning">Warning</span>
+                        <span class="label label-danger">Danger</span>
+                    </h3>
+                    <h4>
+                        <span class="label label-default">Default</span>
+                        <span class="label label-primary">Primary</span>
+                        <span class="label label-success">Success</span>
+                        <span class="label label-info">Info</span>
+                        <span class="label label-warning">Warning</span>
+                        <span class="label label-danger">Danger</span>
+                    </h4>
+                    <h5>
+                        <span class="label label-default">Default</span>
+                        <span class="label label-primary">Primary</span>
+                        <span class="label label-success">Success</span>
+                        <span class="label label-info">Info</span>
+                        <span class="label label-warning">Warning</span>
+                        <span class="label label-danger">Danger</span>
+                    </h5>
+                    <h6>
+                        <span class="label label-default">Default</span>
+                        <span class="label label-primary">Primary</span>
+                        <span class="label label-success">Success</span>
+                        <span class="label label-info">Info</span>
+                        <span class="label label-warning">Warning</span>
+                        <span class="label label-danger">Danger</span>
+                    </h6>
+                </div>
+            </div>
+            <div class="grid_3 grid_5 w3-agileits w3layouts">
+                <h3 class="w3ls-hdg">Progress Bars</h3>
                 <div class="tab-content">
                     <div class="tab-pane active" id="domprogress">
-                        <div class="progress">
+                        <div class="progress w3-agileits">
                             <div class="progress-bar progress-bar-primary" style="width: 20%"></div>
                         </div>
                         <p>Info with <code>progress-bar-info</code> class.</p>
-                        <div class="progress">
+                        <div class="progress w3-agileits">
                             <div class="progress-bar progress-bar-info" style="width: 60%"></div>
                         </div>
                         <p>Success with <code>progress-bar-success</code> class.</p>
-                        <div class="progress">
+                        <div class="progress w3-agileits">
                             <div class="progress-bar progress-bar-success" style="width: 30%"></div>
                         </div>
                         <p>Warning with <code>progress-bar-warning</code> class.</p>
-                        <div class="progress">
+                        <div class="progress w3-agileits">
                             <div class="progress-bar progress-bar-warning" style="width: 70%"></div>
                         </div>
                         <p>Danger with <code>progress-bar-danger</code> class.</p>
-                        <div class="progress">
+                        <div class="progress w3-agileits">
                             <div class="progress-bar progress-bar-danger" style="width: 50%"></div>
                         </div>
                         <p>Inverse with <code>progress-bar-inverse</code> class.</p>
-                        <div class="progress">
+                        <div class="progress w3-agileits">
                             <div class="progress-bar progress-bar-inverse" style="width: 40%"></div>
                         </div>
                         <p>Inverse with <code>progress-bar-inverse</code> class.</p>
-                        <div class="progress">
+                        <div class="progress w3-agileits">
                             <div class="progress-bar progress-bar-success" style="width: 35%"><span class="sr-only">35% Complete (success)</span></div>
                             <div class="progress-bar progress-bar-warning" style="width: 20%"><span class="sr-only">20% Complete (warning)</span></div>
                             <div class="progress-bar progress-bar-danger" style="width: 10%"><span class="sr-only">10% Complete (danger)</span></div>
@@ -462,10 +402,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                 </div>
             </div>
-
-            <div class="grid_3 grid_5 wow fadeInRight animated" data-wow-delay=".5s">
-                <h3 class="bars">Pagination</h3>
-                <div class="col-md-6">
+            <div class="grid_3 grid_5 w3-agileits">
+                <h3 class="w3ls-hdg">Alerts</h3>
+                <div class="alert alert-success agileits" role="alert">
+                    <strong>Well done!</strong> You successfully read this important alert message.
+                </div>
+                <div class="alert alert-info" role="alert">
+                    <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                </div>
+                <div class="alert alert-warning" role="alert">
+                    <strong>Warning!</strong> Best check yo self, you're not looking too good.
+                </div>
+                <div class="alert alert-danger" role="alert">
+                    <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                </div>
+            </div>
+            <div class="grid_3 grid_5">
+                <h3 class="w3ls-hdg">Pagination</h3>
+                <div class="col-md-6 page_1 agileits-w3layouts">
                     <nav>
                         <ul class="pagination pagination-lg">
                             <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
@@ -500,7 +454,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </ul>
                     </nav>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 page_1 agileits-w3layouts">
                     <ul class="pagination pagination-lg">
                         <li class="disabled"><a href="#"><span aria-hidden="true">«</span></a></li>
                         <li class="active"><a href="#">1</a></li>
@@ -508,7 +462,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="#">3</a></li>
                         <li><a href="#">4</a></li>
                         <li><a href="#">5</a></li>
-                        <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                        <li><a href="#"><span aria-hidden="true">»</span></a></li>
                     </ul>
                     <nav>
                         <ul class="pagination">
@@ -521,20 +475,67 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
                         </ul>
                     </nav>
-                    <ul class="pagination pagination-sm">
+                    <ul class="pagination pagination-sm agile">
                         <li class="disabled"><a href="#"><span aria-hidden="true">«</span></a></li>
                         <li class="active"><a href="#">1</a></li>
                         <li><a href="#">2</a></li>
                         <li><a href="#">3</a></li>
                         <li><a href="#">4</a></li>
                         <li><a href="#">5</a></li>
-                        <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                        <li><a href="#"><span aria-hidden="true">»</span></a></li>
                     </ul>
                 </div>
                 <div class="clearfix"> </div>
             </div>
-            <div class="grid_3 grid_5 wow fadeInLeft animated" data-wow-delay=".5s">
-                <h3 class="bars">Breadcrumbs</h3>
+            <div class="grid_3 grid_5 agile">
+                <h3 class="w3ls-hdg">Default Navbar</h3>
+                <div class="bs-example w3layouts" data-example-id="default-navbar">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                                <a href="#" class="navbar-brand">Brand</a>
+                            </div>
+                            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+                                <ul class="nav navbar-nav  agile">
+                                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#">Separated link</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#">One more separated link</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <form class="navbar-form navbar-left">
+                                    <div class="form-group w3-agile"><input class="form-control" placeholder="Search"></div>
+                                    <button type="submit" class="btn btn-default">Submit</button>
+                                </form>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="#">Link</a></li>
+                                    <li class="dropdown w3-agile"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li role="separator" class="divider w3-agile"></li>
+                                            <li><a href="#">Separated link</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="grid_3 grid_5 ">
+                <h3 class="w3ls-hdg w3layouts ">Breadcrumbs</h3>
                 <ol class="breadcrumb">
                     <li class="active">Home</li>
                 </ol>
@@ -548,9 +549,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li class="active">Data</li>
                 </ol>
             </div>
-
-            <div class="grid_3 grid_5 wow fadeInRight animated" data-wow-delay=".5s">
-                <h3 class="bars">Badges</h3>
+            <div class="grid_3 grid_5 ">
+                <h3 class="w3ls-hdg">Badges</h3>
                 <div class="col-md-6">
                     <p>Add modifier classes to change the appearance of a badge.</p>
                     <table class="table table-bordered">
@@ -601,9 +601,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"> </div>
             </div>
-            <div class="grid_3 grid_5 wow fadeInLeft animated" data-wow-delay=".5s">
-                <h3 class="bars">Tabs</h3>
-                <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+            <div class="grid_3 grid_5 ">
+                <h3 class="w3ls-hdg">Tabs</h3>
+                <div class="bs-example bs-example-tabs w3" role="tabpanel" data-example-id="togglable-tabs">
                     <ul id="myTab" class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Home</a></li>
                         <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Profile</a></li>
@@ -620,7 +620,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
                                 dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+                        <div role="tabpanel" class="tab-pane fade w3" id="profile" aria-labelledby="profile-tab">
                             <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui
                                 photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna
                                 velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui
@@ -639,360 +639,236 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                 </div>
             </div>
-            <h3 class="bars">Unordered List</h3>
-            <ul class="list-group">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <h3 class="bars">Ordered List</h3>
-            <ol>
-                <li class="list-group-item1">Cras justo odio</li>
-                <li class="list-group-item1">Dapibus ac facilisis in</li>
-                <li class="list-group-item1">Morbi leo risus</li>
-                <li class="list-group-item1">Porta ac consectetur ac</li>
-                <li class="list-group-item1">Vestibulum at eros</li>
-            </ol>
-            <h3 class="bars">Forms</h3>
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">@</span>
-                <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            <div class="grid_3 grid_5 w3">
+                <h3 class="w3ls-hdg">Wells</h3>
+                <div class="well w3l">
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                </div>
+                <div class="well w3l">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here
+                </div>
+                <div class="well w3l">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+                    survived not only five centuries, but also the leap into electronic
+                </div>
             </div>
-
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-                <span class="input-group-addon" id="basic-addon2">@example.com</span>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon">$</span>
-                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                <span class="input-group-addon">.00</span>
-            </div>
-            <div class="input-group input-group-lg">
-                <span class="input-group-addon" id="sizing-addon1">@</span>
-                <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon" id="sizing-addon2">@</span>
-                <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon2">
-            </div>
-
-            <div class="input-group input-group-sm">
-                <span class="input-group-addon" id="sizing-addon3">@</span>
-                <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6 in-gp-tl">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-        <input type="checkbox" aria-label="...">
-      </span>
-                        <input type="text" class="form-control" aria-label="...">
+            <div class="grid_3 grid_4">
+                <h3 class="w3ls-hdg">Horizontal Form</h3>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="horizontal-form">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="focusedinput" class="col-sm-2 control-label">Focused Input</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control1" id="focusedinput" placeholder="Default Input">
+                                </div>
+                                <div class="col-sm-2 jlkdfj1">
+                                    <p class="help-block">Your help text!</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledinput" class="col-sm-2 control-label">Disabled Input</label>
+                                <div class="col-sm-8">
+                                    <input disabled="" type="text" class="form-control1" id="disabledinput" placeholder="Disabled Input">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-8">
+                                    <input type="password" class="form-control1" id="inputPassword" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkbox" class="col-sm-2 control-label">Checkbox</label>
+                                <div class="col-sm-8">
+                                    <div class="checkbox-inline1"><label><input type="checkbox"> Unchecked</label></div>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" checked=""> Checked</label></div>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" disabled=""> Disabled Unchecked</label></div>
+                                    <div class="checkbox-inline1"><label><input type="checkbox" disabled="" checked=""> Disabled Checked</label></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkbox" class="col-sm-2 control-label">Checkbox Inline</label>
+                                <div class="col-sm-8">
+                                    <div class="checkbox-inline"><label><input type="checkbox"> Unchecked</label></div>
+                                    <div class="checkbox-inline"><label><input type="checkbox" checked=""> Checked</label></div>
+                                    <div class="checkbox-inline"><label><input type="checkbox" disabled=""> Disabled Unchecked</label></div>
+                                    <div class="checkbox-inline"><label><input type="checkbox" disabled="" checked=""> Disabled Checked</label></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="selector1" class="col-sm-2 control-label">Dropdown Select</label>
+                                <div class="col-sm-8"><select name="selector1" id="selector1" class="form-control1">
+									<option>Lorem ipsum dolor sit amet.</option>
+									<option>Dolore, ab unde modi est!</option>
+									<option>Illum, fuga minus sit eaque.</option>
+									<option>Consequatur ducimus maiores voluptatum minima.</option>
+								</select></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Multiple Select</label>
+                                <div class="col-sm-8">
+                                    <select multiple="" class="form-control1">
+										<option>Option 1</option>
+										<option>Option 2</option>
+										<option>Option 3</option>
+										<option>Option 4</option>
+										<option>Option 5</option>
+									</select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtarea1" class="col-sm-2 control-label">Textarea</label>
+                                <div class="col-sm-8"><textarea name="txtarea1" id="txtarea1" cols="50" rows="4" class="form-control1"></textarea></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="radio" class="col-sm-2 control-label">Radio</label>
+                                <div class="col-sm-8">
+                                    <div class="radio block"><label><input type="radio"> Unchecked</label></div>
+                                    <div class="radio block"><label><input type="radio" checked=""> Checked</label></div>
+                                    <div class="radio block"><label><input type="radio" disabled=""> Disabled Unchecked</label></div>
+                                    <div class="radio block"><label><input type="radio" disabled="" checked=""> Disabled Checked</label></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="radio" class="col-sm-2 control-label">Radio Inline</label>
+                                <div class="col-sm-8">
+                                    <div class="radio-inline"><label><input type="radio"> Unchecked</label></div>
+                                    <div class="radio-inline"><label><input type="radio" checked=""> Checked</label></div>
+                                    <div class="radio-inline"><label><input type="radio" disabled=""> Disabled Unchecked</label></div>
+                                    <div class="radio-inline"><label><input type="radio" disabled="" checked=""> Disabled Checked</label></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="smallinput" class="col-sm-2 control-label label-input-sm">Small Input</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control1 input-sm" id="smallinput" placeholder="Small Input">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="mediuminput" class="col-sm-2 control-label">Medium Input</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control1" id="mediuminput" placeholder="Medium Input">
+                                </div>
+                            </div>
+                            <div class="form-group mb-n">
+                                <label for="largeinput" class="col-sm-2 control-label label-input-lg">Large Input</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control1 input-lg" id="largeinput" placeholder="Large Input">
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <!-- /input-group -->
                 </div>
-                <!-- /.col-lg-6 -->
-                <div class="col-lg-6 in-gp-tb">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-        <input type="radio" aria-label="...">
-      </span>
-                        <input type="text" class="form-control" aria-label="...">
-                    </div>
-                    <!-- /input-group -->
-                </div>
-                <!-- /.col-lg-6 -->
             </div>
-            <!-- /.row -->
-
-
-            <section id="tables">
-                <div class="page-header">
-                    <h3 class="bars">Tables</h3>
-                </div>
-
-                <p>For basic stylinglight padding and only horizontal add the base class <code>.table</code> to any <code>&lt;table&gt;</code>.</p>
-                <div class="bs-docs-example">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <hr class="bs-docs-separator">
-                <p>Add any of the following classes to the <code>.table</code> base class.</p>
-                <p>Adds zebra-striping to any table row within the <code>&lt;tbody&gt;</code> via the <code>:nth-child</code> CSS selector (not available in IE7-8).</p>
-                <div class="bs-docs-example">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p>Add borders and rounded corners to the table.</p>
-                <div class="bs-docs-example">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td rowspan="2">1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@getbootstrap</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p>Enable a hover state on table rows within a <code>&lt;tbody&gt;</code>.</p>
-                <div class="bs-docs-example">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
         </div>
     </div>
-    <!-- //typography -->
-    <!--footer-->
+    <!-- //short-codes -->
+    <!-- newsletter -->
+    <div class="newsletter">
+        <div class="container">
+            <div class="col-md-6 w3agile_newsletter_left">
+                <h3>Newsletter</h3>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt.</p>
+            </div>
+            <div class="col-md-6 w3agile_newsletter_right">
+                <form action="#" method="post"> {% csrf_token %}
+                    <input type="email" name="Email" placeholder="Email" required="">
+                    <input type="submit" value="" />
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!-- //newsletter -->
+    <!-- footer -->
     <div class="footer">
         <div class="container">
-            <div class="col-md-3 footer-grid">
-                <h3>About Us</h3>
-                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
-            </div>
-            <div class="col-md-3 footer-grid ">
-                <h3>Menu</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="kitchen.html">Kitchen</a></li>
-                    <li><a href="care.html">Personal Care</a></li>
-                    <li><a href="hold.html">Household</a></li>
-                    <li><a href="codes.html">Short Codes</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3 footer-grid ">
-                <h3>Customer Services</h3>
-                <ul>
-                    <li><a href="shipping.html">Shipping</a></li>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                    <li><a href="faqs.html">Faqs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="offer.html">Online Shopping</a></li>
-
-                </ul>
-            </div>
-            <div class="col-md-3 footer-grid">
-                <h3>My Account</h3>
-                <ul>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
-                    <li><a href="wishlist.html">Wishlist</a></li>
-
-                </ul>
-            </div>
-            <div class="clearfix"></div>
-            <div class="footer-bottom">
-                <h2><a href="index.html"><b>T<br>H<br>E</b>Big Store<span>The Best Supermarket</span></a></h2>
-                <p class="fo-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-                <ul class="social-fo">
-                    <li><a href="#" class=" face"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class=" twi"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class=" pin"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class=" dri"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                </ul>
-                <div class=" address">
-                    <div class="col-md-4 fo-grid1">
-                        <p><i class="fa fa-home" aria-hidden="true"></i>12K Street , 45 Building Road Canada.</p>
+            <div class="w3_footer_grids">
+                <div class="col-md-3 w3_footer_grid">
+                    <h3>Contact</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+                    <ul class="address">
+                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
+                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
+                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 w3_footer_grid">
+                    <h3>Information</h3>
+                    <ul class="info">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="mail.html">Contact Us</a></li>
+                        <li><a href="codes.html">Short Codes</a></li>
+                        <li><a href="faq.html">FAQ's</a></li>
+                        <li><a href="products.html">Special Products</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 w3_footer_grid">
+                    <h3>Category</h3>
+                    <ul class="info">
+                        <li><a href="products.html">Mobiles</a></li>
+                        <li><a href="products1.html">Laptops</a></li>
+                        <li><a href="products.html">Purifiers</a></li>
+                        <li><a href="products1.html">Wearables</a></li>
+                        <li><a href="products2.html">Kitchen</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 w3_footer_grid">
+                    <h3>Profile</h3>
+                    <ul class="info">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Today's Deals</a></li>
+                    </ul>
+                    <h4>Follow Us</h4>
+                    <div class="agileits_social_button">
+                        <ul>
+                            <li>
+                                <a href="#" class="facebook"> </a>
+                            </li>
+                            <li>
+                                <a href="#" class="twitter"> </a>
+                            </li>
+                            <li>
+                                <a href="#" class="google"> </a>
+                            </li>
+                            <li>
+                                <a href="#" class="pinterest"> </a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-md-4 fo-grid1">
-                        <p><i class="fa fa-phone" aria-hidden="true"></i>+1234 758 839 , +1273 748 730</p>
-                    </div>
-                    <div class="col-md-4 fo-grid1">
-                        <p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>info@example1.com</a></p>
-                    </div>
-                    <div class="clearfix"></div>
-
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <div class="footer-copy1">
+                <div class="footer-copy-pos">
+                    <a href="#home1" class="scroll"><img src="{%static 'images/arrow.png' %}" alt=" " class="img-responsive" /></a>
                 </div>
             </div>
-            <div class="copy-right">
-                <p> &copy; 2016 Big store. All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a></p>
+            <div class="container">
+                <p>&copy; 2017 Electronic Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
             </div>
         </div>
     </div>
-    <!-- //footer-->
+    <!-- //footer -->
+    <!-- cart-js -->
+    <script src="{%static 'js/minicart.js' %}"></script>
+    <script>
+        w3ls.render();
 
-    <!-- smooth scrolling -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            /*
-            	var defaults = {
-            	containerID: 'toTop', // fading element id
-            	containerHoverID: 'toTopHover', // fading element hover id
-            	scrollSpeed: 1200,
-            	easingType: 'linear' 
-            	};
-            */
-            $().UItoTop({
-                easingType: 'easeOutQuart'
-            });
-        });
-    </script>
-    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-    <!-- //smooth scrolling -->
-    <!-- for bootstrap working -->
-    <script src="{% static 'js/bootstrap.js'%}"></script>
-    <!-- //for bootstrap working -->
-    <script type='text/javascript' src="{% static 'js/jquery.mycart.js'%}"></script>
-    <script type="text/javascript">
-        $(function() {
+        w3ls.cart.on('w3sb_checkout', function(evt) {
+            var items, len, i;
 
-            var goToCartIcon = function($addTocartBtn) {
-                var $cartIcon = $(".my-cart-icon");
-                var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({
-                    "position": "fixed",
-                    "z-index": "999"
-                });
-                $addTocartBtn.prepend($image);
-                var position = $cartIcon.position();
-                $image.animate({
-                    top: position.top,
-                    left: position.left
-                }, 500, "linear", function() {
-                    $image.remove();
-                });
+            if (this.subtotal() > 0) {
+                items = this.items();
+
+                for (i = 0, len = items.length; i < len; i++) {}
             }
-
-            $('.my-cart-btn').myCart({
-                classCartIcon: 'my-cart-icon',
-                classCartBadge: 'my-cart-badge',
-                affixCartIcon: true,
-                checkoutCart: function(products) {
-                    $.each(products, function() {
-                        console.log(this);
-                    });
-                },
-                clickOnAddToCart: function($addTocart) {
-                    goToCartIcon($addTocart);
-                },
-                getDiscountPrice: function(products) {
-                    var total = 0;
-                    $.each(products, function() {
-                        total += this.quantity * this.price;
-                    });
-                    return total * 1;
-                }
-            });
-
         });
     </script>
-
-
+    <!-- //cart-js -->
 </body>
 
 </html>

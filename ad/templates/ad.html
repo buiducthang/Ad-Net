@@ -1,10 +1,11 @@
+{% load static %}
 <html lang="en">
 
 <head>
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <!-- <link href="{%static 'css/style.css' %}" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/static/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -31,6 +32,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">News Feed</a></li>
+                <li><a href="ecommerce">Ecommerce</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -60,7 +62,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Post 1 Title</h3>
+                        <h3 class="panel-title">Bài viết 1</h3>
                     </div>
                     <div class="panel-body">
 
@@ -69,8 +71,8 @@
                                 <img class="media-object" src="#" alt="Image">
                             </a>
                             <div class="media-body">
-                                <h4 class="media-heading">Post 1 Content</h4>
-                                <p>quan</p>
+                                <h4 class="media-heading">Nội dung 1</h4>
+                                <p>Thể loại 1</p>
                             </div>
                         </div>
 
@@ -85,7 +87,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Post 2 Title</h3>
+                        <h3 class="panel-title">Bài viết 2</h3>
                     </div>
                     <div class="panel-body">
 
@@ -94,8 +96,8 @@
                                 <img class="media-object" src="#" alt="Image">
                             </a>
                             <div class="media-body">
-                                <h4 class="media-heading">Post 2 Content</h4>
-                                <p>ao</p>
+                                <h4 class="media-heading">Nội dung 2</h4>
+                                <p>Thể loại 2</p>
                             </div>
                         </div>
 
@@ -110,7 +112,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Post 3 Title</h3>
+                        <h3 class="panel-title">Bài viết 3</h3>
                     </div>
                     <div class="panel-body">
 
@@ -119,8 +121,8 @@
                                 <img class="media-object" src="#" alt="Image">
                             </a>
                             <div class="media-body">
-                                <h4 class="media-heading">Post 3 Content</h4>
-                                <p>dong ho</p>
+                                <h4 class="media-heading">Nội dung 3</h4>
+                                <p>Thể loại 3</p>
                             </div>
                         </div>
 
@@ -135,7 +137,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Post 1 Title</h3>
+                        <h3 class="panel-title">Bài viết 4</h3>
                     </div>
                     <div class="panel-body">
 
@@ -144,8 +146,8 @@
                                 <img class="media-object" src="#" alt="Image">
                             </a>
                             <div class="media-body">
-                                <h4 class="media-heading">Post 1 Content</h4>
-                                <p>quan</p>
+                                <h4 class="media-heading">Nội dung 4</h4>
+                                <p>Thể loại 1</p>
                             </div>
                         </div>
 
@@ -160,7 +162,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Post 1 Title</h3>
+                        <h3 class="panel-title">Bài viết 5</h3>
                     </div>
                     <div class="panel-body">
 
@@ -169,8 +171,8 @@
                                 <img class="media-object" src="#" alt="Image">
                             </a>
                             <div class="media-body">
-                                <h4 class="media-heading">Post 1 Content</h4>
-                                <p>quan</p>
+                                <h4 class="media-heading">Nội dung 5</h4>
+                                <p>Thể loại 2</p>
                             </div>
                         </div>
 
@@ -187,19 +189,19 @@
             </div>
         </div>
 
-        <div class="col-sm-2 panel panel-default ad-box">
+        <div class="col-sm-3 panel panel-default ad-box">
             <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
+                <h3 id="ad-title" class="panel-title">{{ productName }}</h3>
             </div>
             <div class="panel-body">
 
                 <div class="media">
                     <a class="pull-left" href="#">
-                        <img class="media-object" src="#" alt="Image">
+                        <img class="media-object" src="{{imgSrc}}" alt="Image">
                     </a>
                     <div class="media-body">
-                        <h4 class="media-heading">Media heading</h4>
-                        <p>Text goes here...</p>
+                        <h4 id="ad-src" class="media-heading">Quảng cáo</h4>
+                        <p>{{url}}</p>
                     </div>
                 </div>
 
@@ -213,25 +215,49 @@
 
 
     <script>
-        $(document).ready(function() {
-            $('#ajax ').click(function() {
-                console.log("add click");
-
-                $.ajax({
-                    url: '/ajax ',
-                    type: 'POST ',
-                    data: {
-                        ajaxdata: $('#ajaxdata ').val(),
-                        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken] ').val()
-                    },
-                    header: {
-                        'Content-Type ': 'application/json '
-                    },
-                    success: function(response) {
-                        console.log("add ok");
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
                     }
-                });
-            });
+                }
+            }
+            return cookieValue;
+        }
+        $(document).ready(function() {
+            // $('#ajax ').click(function() {
+            //     console.log("add click");
+
+            //     $.ajax({
+            //         url: '/ajax ',
+            //         type: 'POST ',
+            //         data: {
+            //             ajaxdata: $('#ajaxdata ').val(),
+            //             csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken] ').val()
+            //         },
+            //         header: {
+            //             'Content-Type ': 'application/json '
+            //         },
+            //         success: function(response) {
+            //             console.log("add ok");
+            //         }
+            //     });
+            // });
+            // url = getCookie('url');
+            // productName = getCookie('product_name');
+            // imgSrc = getCookie('img_src');
+            // console.log(url);
+            // console.log(productName)
+            // $('#ad-title').text(productName);
+            // $('#ad-img').attr('src', imgSrc.split('"')[1]);
+            // console.log(imgSrc.split('"')[1]);
+            // $('#ad-src').text(url);
         });
     </script>
 

@@ -21,7 +21,7 @@ from ads import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    #url(r'^', include('ad.urls')),
+    url(r'^', include('ad.urls')),
     url(r'^ecommerce/', include('ecommerce.urls')),
     #url(r'^', include('ads.urls')),
 ]
