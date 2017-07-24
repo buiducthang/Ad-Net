@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
     <head>
         <title></title>
@@ -13,27 +13,267 @@
     <input type="hidden" id="ajaxdata" value="ajax request">
     <img src="" alt="ad" >
     </body>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="{%static 'css/style.css' %}" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- <button type="" id="ajax">Ajax</button> <input type='hidden' name='csrfmiddlewaretoken' value='4FoSJrTJSS1T9LjyMKERDNtLqCwb3OC9GmdmSeRsc1cDtIvGNXqx6Vda62RRLTgV' />
+    <input type="hidden" id="ajaxdata" value="ajax request"> -->
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">VP9.VN</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">News Feed</a></li>
+                <li><a href="ecommerce">Ecommerce</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Username <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Log out</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input class="form-control" placeholder="Search" type="text">
+                </div>
+                <button type="submit" class="btn btn-default">Go</button>
+            </form>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+
+
+    <div class="container" style="margin-top:4%">
+
+        <div class="row">
+            <div class="col-xs-6 col-sm-offset-3 col-sm-6 col-md-6 col-lg-6">
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Bài viết 1</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="#" alt="Image">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Nội dung 1</h4>
+                                <p>Thể loại 1</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer">
+
+                        <button type="button" class="btn btn-default">Like</button>
+
+                    </div>
+
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Bài viết 2</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="#" alt="Image">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Nội dung 2</h4>
+                                <p>Thể loại 2</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer">
+
+                        <button type="button" class="btn btn-default">Like</button>
+
+                    </div>
+
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Bài viết 3</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="#" alt="Image">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Nội dung 3</h4>
+                                <p>Thể loại 3</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer">
+
+                        <button type="button" class="btn btn-default">Like</button>
+
+                    </div>
+
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Bài viết 4</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="#" alt="Image">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Nội dung 4</h4>
+                                <p>Thể loại 1</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer">
+
+                        <button type="button" class="btn btn-default">Like</button>
+
+                    </div>
+
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Bài viết 5</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="#" alt="Image">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Nội dung 5</h4>
+                                <p>Thể loại 2</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer">
+
+                        <button type="button" class="btn btn-default">Like</button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-sm-3 panel panel-default ad-box">
+            <div class="panel-heading">
+                <h3 id="ad-title" class="panel-title">{{ productName }}</h3>
+            </div>
+            <div class="panel-body">
+
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="{{imgSrc}}" alt="Image">
+                    </a>
+                    <div class="media-body">
+                        <h4 id="ad-src" class="media-heading">Quảng cáo</h4>
+                        <p>{{url}}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+>>>>>>> 341d21c17c2edbb8424e1f032bb5502ef1fb4ace
 
     <script>
-        $(document).ready(function(){
-            $('#ajax').click(function(){
-            console.log("add click");
-            
-            $.ajax({
-                url: '/ajax',
-                type: 'POST',
-                data: {
-                    ajaxdata:$('#ajaxdata').val(),
-                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
-                },
-                header: {
-                    'Content-Type': 'application/json'
-                },
-                success: function(response){
-                    console.log("add ok");
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
                 }
-            });
-        });
+            }
+            return cookieValue;
+        }
+        $(document).ready(function() {
+            // $('#ajax ').click(function() {
+            //     console.log("add click");
+
+            //     $.ajax({
+            //         url: '/ajax ',
+            //         type: 'POST ',
+            //         data: {
+            //             ajaxdata: $('#ajaxdata ').val(),
+            //             csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken] ').val()
+            //         },
+            //         header: {
+            //             'Content-Type ': 'application/json '
+            //         },
+            //         success: function(response) {
+            //             console.log("add ok");
+            //         }
+            //     });
+            // });
+            // url = getCookie('url');
+            // productName = getCookie('product_name');
+            // imgSrc = getCookie('img_src');
+            // console.log(url);
+            // console.log(productName)
+            // $('#ad-title').text(productName);
+            // $('#ad-img').attr('src', imgSrc.split('"')[1]);
+            // console.log(imgSrc.split('"')[1]);
+            // $('#ad-src').text(url);
         });
     </script>
+
+</body>
+
 </html>
