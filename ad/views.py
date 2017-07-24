@@ -14,9 +14,9 @@ def Get(request):
     #Search by userid
     search = es.search(index="ad",body={"query": {"match": {'userid':'13'}}})
     #print search
-    imgSrc = request.COOKIES['img_src']
-    productName = request.COOKIES['product_name']
-    url = request.COOKIES['url']
+    imgSrc = request.COOKIES.get('img_src','null')
+    productName = request.COOKIES.get('product_name','Chua co quang cao')
+    url = request.COOKIES.get('url','Chua co quang cao')
     #Get by id
     #get = es.get(index="ad", doc_type="ad-net", id="AV1Wa8w4CM-GrZ83-11I")
     #eventId = get['_id']
