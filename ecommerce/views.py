@@ -124,5 +124,5 @@ def Detail(request):
 def cookie(request):
     response = render_to_response('index-cookie.html')
     #set cookie
-    response.set_cookie('cookie', "test cookie")
+    response.set_cookie('cookie', "http://design-develop.net/wp-content/uploads/2012/05/dd_damask_03.jpg")
     return response

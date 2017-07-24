@@ -14,7 +14,7 @@ def ad(request):
     #test cookie
     #get cookie
     print "cookie: ", request.COOKIES['cookie'] 
-    return render(request,"test.html")
+    return render(request,"test.html",{'ad':request.COOKIES['cookie']})
 
 def get_ads_by_cate(request):
     print "asdf"
