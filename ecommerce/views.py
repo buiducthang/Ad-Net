@@ -8,6 +8,11 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 
 import json
+import ast
+import datetime
+
+productsName = []
+imgSrcs = []
 
 def SignUp(request):
     if(request.method == 'POST'):
@@ -15,7 +20,7 @@ def SignUp(request):
         password = request.POST['password']
         print username, ' ' , password
 
-        es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
+        es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
         
         #Search username
         search = es.search(index="ad",body={"query": {"match": {'username':username}}})
@@ -36,13 +41,14 @@ def SignUp(request):
             print categories_goods
 
             #Init Category of goods
-            data = {"userid":userid, "ao": categories_goods['ao'], "quan":categories_goods["quan"], "vay":categories_goods['vay']}
+            data = {"userid":userid, "ao": categories_goods['ao'], "quan":categories_goods["quan"], 
+                        "vay":categories_goods['vay'],"time":0}
             print data
             es.index(index="ad", doc_type="cate", body=data)
         else:
             return HttpResponse("user name is existed")
 
-    return render(request, "ecommerce.html")
+    return render(request, "signin.html")
 
 def SignIn(request):
     if(request.method == 'POST'):
@@ -50,7 +56,7 @@ def SignIn(request):
         password = request.POST['password']
         print username, ' ' , password
 
-        es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
+        es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
         
         #Search user
         search = es.search(index="ad",body={"query": {"match": {'username':username}}})
@@ -71,13 +77,21 @@ def SignIn(request):
             data = {"result":0}
             return JsonResponse(data)
 
-    return render(request, "ecommerce.html")
+    return render(request, "signin.html")
 
 def Goods(request):
+    #Date time
+    time_current = datetime.datetime.now()
+    yesterday = datetime.datetime(2017, 7, 24, 11, 5)
+    print yesterday
+    print "time now:",time_current,"asd"
+
+    print "time:",((time_current - yesterday).total_seconds())/60.0
     return render(request,"goods.html")
 
 def Detail(request):
-    es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
+    es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
+    point = 0
 
     #Search cate by userid
     print "search"
@@ -91,19 +105,22 @@ def Detail(request):
     print quan, '  ', ao, ' ', vay, ' ', cateid
 
     if(request.method == 'GET' and request.is_ajax()):
-        #Get category og goods
+        #Get category of goods
         goods = request.GET.get('goods')
 
         #Check cate
         if(goods == 'quan'):
             quan = quan + 1
+            point = quan
         elif (goods == 'vay'):
             vay = vay + 1
+            point = vay
         elif (goods == 'ao'):
             ao = ao + 1
+            point = ao
         
         #print request.session['quan'], '  ', request.session['ao'], ' ', request.session['vay'], ' ', request.session['cateid']
-        
+
         #Update cate point
         point_goods = dict()
         point_goods['ao'] = ao
@@ -118,7 +135,7 @@ def Detail(request):
 
         #print update
         rs_update = {"update":0}
-        return HttpResponse(goods)
+        return JsonResponse({goods:point})
 
 #Test cookie
 def cookie(request):
@@ -129,21 +146,53 @@ def cookie(request):
 
 def setAds(request):
     if(request.is_ajax() and request.POST):
+        
+
         base_url = 'ecommerce'
         productName = request.POST.get('productName')
-        print productName
+        
         imgSrc = request.POST.get('imgSrc')
-        print imgSrc
+        
         url = base_url + '/'+ request.POST.get('url')
         print url
+
+        productsName.append(productName)
+        print productsName
+        imgSrcs.append(imgSrc)
+        print imgSrcs
+
         response = HttpResponse('Xong!')
-        response.set_cookie('product_name',productName)
-        response.set_cookie('img_src', imgSrc)
+        response.set_cookie('product_name',productsName)
+        response.set_cookie('img_src', imgSrcs)
         response.set_cookie('url',url)
         return response
 
 def Index(request):
-    return render(request,'index.html')
+    #Cookie for ad
+    imgSrc = request.COOKIES.get('img_src','null')
+    productName = request.COOKIES.get('product_name','Chua co quang cao')
+    url = request.COOKIES.get('url','Chua co quang cao')
+
+    # print "product name:", ast.literal_eval(productName)[-1]
+    # print "img: ", ast.literal_eval(imgSrc)[-1]
+    ads = zip('Chua co quang cao','#')
+    if(productName != 'Chua co quang cao'):
+        list_imgSrc = ast.literal_eval(imgSrc)
+        list_productName = ast.literal_eval(productName)
+
+        print "length list imgSrc: " ,len(list_imgSrc)
+
+        print "first: ", list_productName
+        if(len(list_imgSrc) > 4 and len(list_productName) > 4):
+            list_imgSrc = list_imgSrc[1:]
+            list_productName = list_productName[1:]
+        
+        print "after: ", list_productName
+        ads = zip(list_productName,list_imgSrc)
+
+        return render(request,'index.html',{'ads':ads, 'url': url})
+    return render(request,'index.html',{'ads':ads, 'url': url})
+
 def About(request):
     return render(request,'about.html')
 def Codes(request):

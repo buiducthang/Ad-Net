@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <a href="#" id="ao">Ao</a>
+        <a href="#" id="quan">Quan</a>
+        <a href="#" id="vay">Vay</a>
+    </body>
+
+    <script>
+        $(document).ready(function(){
+            $('#ao').click(function(){
+                $.ajax({
+                    url: '{% url 'eDetail' %}',
+                    type: 'get',
+                    data: {
+                        goods:'ao',
+                    },
+                    header: {
+                        'Content-Type': 'application/json'
+                    },
+                    success: function(response){
+                        console.log(response);
+                    }
+                });
+            });
+        });
+    </script>
+</html>
