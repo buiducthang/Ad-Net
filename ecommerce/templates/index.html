@@ -82,9 +82,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
                                         <div class="facts">
                                             <div class="register">
-                                                <form action="#" method="post"> {% csrf_token %}
-                                                    <input name="Email" placeholder="Email Address" type="text" required="">
-                                                    <input name="Password" placeholder="Password" type="password" required="">
+                                                <form action="{% url 'eSignIn' %}" method="post"> 
+                                                    {% csrf_token %}
+                                                    <input name="acc" placeholder="Account" type="text" >
+                                                    <input name="password" placeholder="Password" type="password" >
                                                     <div class="sign-up">
                                                         <input type="submit" value="Sign in" />
                                                     </div>
@@ -95,11 +96,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
                                         <div class="facts">
                                             <div class="register">
-                                                <form action="#" method="post"> {% csrf_token %}
+                                                <form action="{% url 'eSignUp' %}" method="post"> 
+                                                    {% csrf_token %}
                                                     <input placeholder="Name" name="Name" type="text" required="">
-                                                    <input placeholder="Email Address" name="Email" type="email" required="">
-                                                    <input placeholder="Password" name="Password" type="password" required="">
-                                                    <input placeholder="Confirm Password" name="Password" type="password" required="">
+                                                    <input placeholder="Account" name="acc" type="text" required="">
+                                                    <input placeholder="Password" name="password" type="password" required="">
+                                                    
                                                     <div class="sign-up">
                                                         <input type="submit" value="Create Account" />
                                                     </div>
@@ -314,7 +316,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <div class="w3_hs_bottom">
                                             <ul>
                                                 <li>
-                                                    <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                    <a href="#" data-toggle="modal" data-target="mobile"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -344,7 +346,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <div class="w3_hs_bottom">
                                             <ul>
                                                 <li>
-                                                    <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                    <a href="#" data-toggle="modal" data-target="mobile"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -374,7 +376,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <div class="w3_hs_bottom">
                                             <ul>
                                                 <li>
-                                                    <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                    <a href="#" data-toggle="modal" data-target="mobile"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -504,7 +506,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <div class="w3_hs_bottom">
                                             <ul>
                                                 <li>
-                                                    <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                    <a href="#" data-toggle="modal" data-target="laptop"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -564,7 +566,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <div class="w3_hs_bottom">
                                             <ul>
                                                 <li>
-                                                    <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                    <a href="#" data-toggle="modal" data-target="toy"><span class="glyphicon glyphicon-eye-open toy" aria-hidden="true"></span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1232,7 +1234,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="w3_hs_bottom w3_hs_bottom_sub">
                                 <ul>
                                     <li>
-                                        <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                        <a href="#" data-toggle="modal" data-target="laptop"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -1261,7 +1263,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="w3_hs_bottom w3_hs_bottom_sub">
                                 <ul>
                                     <li>
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                        <a href="#" data-toggle="modal" data-target="mobile"><span class="glyphicon glyphicon-eye-open mobile" aria-hidden="true"></span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -1319,7 +1321,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="w3_hs_bottom w3_hs_bottom_sub">
                                 <ul>
                                     <li>
-                                        <a href="#" data-toggle="modal" data-target="#myModal6"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                        <a href="#" data-toggle="modal" data-target="toy"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -1553,6 +1555,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 productName = $(self.parentElement.parentElement).find('h5:first').find('a:first').html();
                 console.log('productName: ', productName);
                 modalName = $(self).find('a:first').attr('data-target');
+                console.log("Modal Name:" + modalName);
                 imgSrc = $(self.parentElement.parentElement).find('img:first').attr('src');
                 console.log('imgSrc: ', imgSrc);
                 url = 'single.html';
@@ -1572,6 +1575,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     success: function(e) {
                         console.log('submit sucess ', e);
                         console.log(getCookie('img_src'));
+                    },
+                    error: function(e) {
+                        console.log('submit error ', e);
+                    }
+                })
+
+                $.ajax({
+                    url: '{% url "eDetail" %}',
+                    type: 'get',
+                    data: {
+                        goods: modalName,
+                    },
+                    header: {
+                        'Content-Type': 'application/json'
+                    },
+                    success: function(e) {
+                        console.log(e);
+                        
                     },
                     error: function(e) {
                         console.log('submit error ', e);
@@ -1609,6 +1630,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     }
                 })
             })
+
+            $('.toy').click(function(){
+                console.log('toy');
+            });
+
+            $('.mobile').click(function(){
+                console.log('mobile')
+            });
         });
     </script>
     <!-- //cart-js -->

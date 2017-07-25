@@ -15,6 +15,7 @@ productsName = []
 imgSrcs = []
 
 def SignUp(request):
+    time_current = datetime.datetime.now()
     if(request.method == 'POST'):
         username = request.POST['acc']
         password = request.POST['password']
@@ -34,21 +35,27 @@ def SignUp(request):
             print "userid: ", user['_id']
             #Init categories
             categories_goods = {}
-            categories_goods['ao'] = 0
-            categories_goods['quan'] = 0
-            categories_goods['vay'] = 0
-
+            categories_goods['mobile'] = 0
+            categories_goods['laptop'] = 0
+            categories_goods['toy'] = 0
+            categories_goods["time"] = 0
+            #Them time can xem lai
+            categories_goods["time_mobile"] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
+            categories_goods["time_laptop"] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
+            categories_goods["time_toy"] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
+            categories_goods["userid"] = userid
+            
             print categories_goods
 
             #Init Category of goods
-            data = {"userid":userid, "ao": categories_goods['ao'], "quan":categories_goods["quan"], 
-                        "vay":categories_goods['vay'],"time":0}
+            data = {json.dumps(categories_goods)}
             print data
-            es.index(index="ad", doc_type="cate", body=data)
+            #sua cho nay can xem lai
+            es.index(index="ad-cate", doc_type="cate", body=categories_goods)
         else:
             return HttpResponse("user name is existed")
 
-    return render(request, "signin.html")
+    return render(request, "index.html")
 
 def SignIn(request):
     if(request.method == 'POST'):
@@ -72,13 +79,14 @@ def SignIn(request):
             # request.session['username'] = user
             # print request.session['username']
             #return HttpResponse('sign in success with userid: '+ userid + ' of username '+ user)
-            return HttpResponseRedirect('/ecommerce/goods')
+            return render(request, "index.html")
         else:
             data = {"result":0}
             return JsonResponse(data)
 
-    return render(request, "signin.html")
+    return render(request, "index.html")
 
+#ham test time can xem lai
 def Goods(request):
     #Date time
     time_current = datetime.datetime.now()
@@ -87,6 +95,37 @@ def Goods(request):
     print "time now:",time_current,"asd"
 
     print "time:",((time_current - yesterday).total_seconds())/60.0
+
+    #Elastic search init
+    es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
+
+    #Search cate by userid
+    print "search"
+    # search = es.search(index="ad", doc_type="cate", body={"query": {"match": {'userid':'AV14BeMo-Q5w_qrdaia3'}}})
+    # source = search['hits']['hits'][0]['_source']
+    # time = source['time']
+    # time_mobile = source['time_mobile']
+    # time_laptop = source['time_laptop']
+    # time_toy = source['time_toy']
+
+    time_goods= dict()
+    
+    # if(time == 0):
+    time_goods['toy'] = 0
+    time_goods['time_laptop'] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
+    #print "time_goods:",time_goods['time_mobile']
+    time_goods['time_toy'] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
+    time_goods['mobile'] = 0
+    time_goods['laptop'] = 0
+    time_goods['time'] = 1
+    time_goods['userid'] = 'AV14BeMo-Q5w_qrdaia3'
+    #print "time_goods:",time_goods
+    time_goods['time_mobile'] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
+    print "time_goods:",time_goods
+        
+        #es.delete(index="ad", doc_type="cate", id="AV14BeNP-Q5w_qrdaia4")
+    es.index(index='ad', doc_type='cate', body=time_goods)
+    
     return render(request,"goods.html")
 
 def Detail(request):
@@ -97,35 +136,35 @@ def Detail(request):
     print "search"
     search = es.search(index="ad", doc_type="cate", body={"query": {"match": {'userid':request.session['userid']}}})
     source = search['hits']['hits'][0]['_source']
-    quan = source['quan']
-    vay = source['vay']
-    ao = source['ao']
+    laptop = source['laptop']
+    toy = source['toy']
+    mobile = source['mobile']
     cateid = search['hits']['hits'][0]['_id']
 
-    print quan, '  ', ao, ' ', vay, ' ', cateid
+    print laptop, '  ', mobile, ' ', toy, ' ', cateid
 
     if(request.method == 'GET' and request.is_ajax()):
         #Get category of goods
         goods = request.GET.get('goods')
 
         #Check cate
-        if(goods == 'quan'):
-            quan = quan + 1
-            point = quan
-        elif (goods == 'vay'):
-            vay = vay + 1
-            point = vay
-        elif (goods == 'ao'):
-            ao = ao + 1
-            point = ao
+        if(goods == 'laptop'):
+            laptop = laptop + 1
+            point = laptop
+        elif (goods == 'toy'):
+            toy = toy + 1
+            point = toy
+        elif (goods == 'mobile'):
+            mobile = mobile + 1
+            point = mobile
         
-        #print request.session['quan'], '  ', request.session['ao'], ' ', request.session['vay'], ' ', request.session['cateid']
+        #print request.session['laptop'], '  ', request.session['mobile'], ' ', request.session['toy'], ' ', request.session['cateid']
 
         #Update cate point
         point_goods = dict()
-        point_goods['ao'] = ao
-        point_goods['quan'] = quan
-        point_goods['vay'] = vay
+        point_goods['mobile'] = mobile
+        point_goods['laptop'] = laptop
+        point_goods['toy'] = toy
         point_goods['userid'] = request.session['userid']
 
         print point_goods

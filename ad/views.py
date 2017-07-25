@@ -34,7 +34,7 @@ def Get(request):
         
         print "after: ", list_productName
         ads = zip(list_productName,list_imgSrc)
-
+        return render(request,"ad.html",{'imgSrc':list_imgSrc[-1], 'productName':list_productName[-1], 'url': url})
     #Get by id
     #get = es.get(index="ad", doc_type="ad-net", id="AV1Wa8w4CM-GrZ83-11I")
     #eventId = get['_id']
@@ -51,7 +51,7 @@ def Get(request):
     #Delete by Id
     #es.delete(index="ad", doc_type="ad-net", id="AV1Y3Q6KxaR1NsDMNVAf")
 
-    return render(request,"ad.html",{'imgSrc':list_imgSrc[-1], 'productName':list_productName[-1], 'url': url})
+    return render(request,"ad.html",{'imgSrc':"#", 'productName':"Chua co quang cao", 'url': url})
 
 def AjaxRequest(request):
     if(request.is_ajax() and request.POST):
