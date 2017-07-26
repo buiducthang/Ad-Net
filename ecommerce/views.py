@@ -6,53 +6,27 @@ from elasticsearch import Elasticsearch
 from django.http import *
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+from dateutil.parser import parse
 
 import json
 import ast
 import datetime
-from dateutil.parser import parse
+import sys
+from adnet import Service
 
 productsName = []
 imgSrcs = []
 
 def SignUp(request):
-    time_current = datetime.datetime.now()
+    
     if(request.method == 'POST'):
         username = request.POST['acc']
         password = request.POST['password']
         print username, ' ' , password
 
-        es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
-        
-        #Search username
-        search = es.search(index="ad", doc_type="ad-net", body={"query": {"match": {'username':username}}})
-        print search['hits']['total']
-        exist = search['hits']['total']
-
-        if(exist == 0):
+        if(Service.Check_User(username) == 0):
             #Create user
-            user = es.index(index="ad", doc_type="ad-net", body={"username":username,"password":password})
-            userid = user['_id']
-            print "userid: ", user['_id']
-            #Init categories
-            categories_goods = {}
-            categories_goods['mobile'] = 0
-            categories_goods['laptop'] = 0
-            categories_goods['toy'] = 0
-            categories_goods["time"] = 0
-            #Them time can xem lai
-            categories_goods["time_mobile"] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
-            categories_goods["time_laptop"] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
-            categories_goods["time_toy"] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
-            categories_goods["userid"] = userid
-            
-            print categories_goods
-
-            #Init Category of goods
-            data = {json.dumps(categories_goods)}
-            print data
-            #da check
-            es.index(index="ad", doc_type="cate", body=categories_goods)
+            Service.Create_User(username,password)
         else:
             return HttpResponse("user name is existed")
 
@@ -64,18 +38,12 @@ def SignIn(request):
         password = request.POST['password']
         print username, ' ' , password
 
-        es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
-        
         #Search user
-        search = es.search(index="ad",body={"query": {"match": {'username':username}}})
-        user = search['hits']['hits'][0]['_source']['username']
-        passs = search['hits']['hits'][0]['_source']['password']
-        userid = search['hits']['hits'][0]['_id']
-        print username, ' ' , passs
-        print userid
+        search = Service.Search_User_By_Username(username)
+        print search['username']
 
-        if(user == username and passs == password):
-            request.session['userid'] = userid
+        if(search['username'] == username and search['password'] == password):
+            request.session['userid'] = search['userid']
             print request.session['userid']
             # request.session['username'] = user
             # print request.session['username']
@@ -87,26 +55,11 @@ def SignIn(request):
 
     return render(request, "index.html")
 
-def Time(time_current, time2_string):
-    return ((time_current - parse(time2_string)).total_seconds())/60.0
-
 #ham test time da check
 def Goods(request):
-    #Date time
     time_current = datetime.datetime.now()
-    yesterday = datetime.datetime(2017, 7, 24, 11, 5)
-    print yesterday
-    print "time now:",time_current,"asd"
 
-    print "time:",((time_current - yesterday).total_seconds())/60.0
-
-    #Elastic search init
-    es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
-
-    #Search cate by userid
-    print "search"
-    search = es.search(index="ad", doc_type="cate", body={"query": {"match": {'userid':'AV18o-v_-Q5w_qrdaib7'}}})
-    source = search['hits']['hits'][0]['_source']
+    source = Service.Search_Cate_By_UserId('AV18o-v_-Q5w_qrdaib7')
     time = source['time']
     #print "time:", time
     time_mobile = source['time_mobile']
@@ -118,22 +71,13 @@ def Goods(request):
     mobile = source['mobile']
 
     print "time chenh lech:",((time_current - parse(time_mobile)).total_seconds())/60.0
-    time_goods= dict()
     
+    list_pointgoods = list()
+
     if(time == 0):
-        time_goods['toy'] = 0
-        time_goods['time_laptop'] = time_current
-        #print "time_goods:",time_goods['time_mobile']
-        time_goods['time_toy'] = time_current
-        time_goods['mobile'] = 1
-        time_goods['laptop'] = 4
-        time_goods['time'] = 1
-        time_goods['userid'] = 'AV18o-v_-Q5w_qrdaib7'
-        #print "time_goods:",time_goods
-        time_goods['time_mobile'] = time_current
-        print "time_goods:",time_goods
-            
-        es.update(index="ad", doc_type="cate", id="AV18o-w9-Q5w_qrdaib8", body={'doc':time_goods})
+        list_pointgoods= [0,0,0]
+        
+        Service.Update_Time_And_PointGoods(list_pointgoods,"AV18o-w9-Q5w_qrdaib8","AV18o-v_-Q5w_qrdaib")
         return render(request,"goods.html")
     if(request.method == 'GET' and request.is_ajax()):
         #Get category of goods
@@ -149,19 +93,11 @@ def Goods(request):
             mobile = mobile + 1
             point = mobile
 
-        time_goods['toy'] = toy
-        time_goods['time_laptop'] = time_current
-        #print "time_goods:",time_goods['time_mobile']
-        time_goods['time_toy'] = time_current
-        time_goods['mobile'] = mobile
-        time_goods['laptop'] = laptop
-        time_goods['time'] = 1
-        time_goods['userid'] = 'AV18o-v_-Q5w_qrdaib7'
-        #print "time_goods:",time_goods
-        time_goods['time_mobile'] = time_current
-        print "time_goods:",time_goods
-        es.update(index="ad", doc_type="cate", id="AV18o-w9-Q5w_qrdaib8", body={'doc':time_goods})
-        
+        list_pointgoods.append(toy)
+        list_pointgoods.append(mobile)
+        list_pointgoods.append(laptop)
+        Service.Update_Time_And_PointGoods(list_pointgoods,"AV18o-w9-Q5w_qrdaib8","AV18o-v_-Q5w_qrdaib")
+
     return render(request,"goods.html")
 
 def Detail(request):
