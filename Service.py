@@ -42,7 +42,7 @@ def Search_User_By_Username(username):
     return (username, passs, userid)
 
 #Update time and point goods
-def Update_Time_And_PointGoods(list_pointgoods, list_times, cateid, userid, time_current):
+def Update_Time_And_PointGoods(list_pointgoods, cateid, userid, time_current):
     es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
 
     time_goods= dict()
