@@ -101,25 +101,31 @@ def Goods(request):
     return render(request,"goods.html")
 
 def Detail(request):
-    es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
-    point = 0
-
     #Search cate by userid
-    print "search"
-    search = es.search(index="ad", doc_type="cate", body={"query": {"match": {'userid':request.session['userid']}}})
-    source = search['hits']['hits'][0]['_source']
-    laptop = source['laptop']
-    toy = source['toy']
-    mobile = source['mobile']
-    cateid = search['hits']['hits'][0]['_id']
+    cate = Service.Get_Cate_By_UserId(request.session['userid'])
 
-    print laptop, '  ', mobile, ' ', toy, ' ', cateid
+    print cate['laptop'], '  ', cate['mobile'], ' ', cate['toy'], ' ', cate['cateid']
 
+    list_pointgoods = list()
+    # source = Service.Search_Cate_By_UserId(request.session['userid'])
+    # time = source['time']
+        
+    # if(time == 0):
+    #     list_pointgoods= [0,0,0]
+            
+    #     Service.Update_Time_And_PointGoods(list_pointgoods,cateid,request.session['userid'])
+    #     return render(request,"goods.html")
+    
     if(request.method == 'GET' and request.is_ajax()):
         #Get category of goods
         goods = request.GET.get('goods')
 
-        #Check cate
+        print "goods:",goods
+
+        laptop = cate['laptop']
+        toy = cate['toy']
+        mobile = cate['mobile']
+
         if(goods == 'laptop'):
             laptop = laptop + 1
             point = laptop
@@ -129,23 +135,16 @@ def Detail(request):
         elif (goods == 'mobile'):
             mobile = mobile + 1
             point = mobile
-        
-        #print request.session['laptop'], '  ', request.session['mobile'], ' ', request.session['toy'], ' ', request.session['cateid']
 
-        #Update cate point
-        point_goods = dict()
-        point_goods['mobile'] = mobile
-        point_goods['laptop'] = laptop
-        point_goods['toy'] = toy
-        point_goods['userid'] = request.session['userid']
+        print "toy point:",toy
+        list_pointgoods.append(toy)
+        list_pointgoods.append(mobile)
+        list_pointgoods.append(laptop)
 
-        print point_goods
+        print "list_pointgoods:",list_pointgoods
 
-        #update cate point
-        es.update(index='ad', doc_type='cate', id=cateid, body={'doc':point_goods})
+        Service.Update_Time_And_PointGoods(list_pointgoods,cate['cateid'],request.session['userid'])
 
-        #print update
-        rs_update = {"update":0}
         return JsonResponse({goods:point})
 
 #Test cookie

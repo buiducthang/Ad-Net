@@ -119,7 +119,7 @@ def Get_Cate_By_UserId(userid):
     cate['mobile'] = source['mobile']
     cate['laptop'] = source['laptop']
     cate['toy'] = source['toy']
-    
+    cate['cateid'] = search['hits']['hits'][0]['_id']
     return cate
 
 #Get Cate max point by userid
