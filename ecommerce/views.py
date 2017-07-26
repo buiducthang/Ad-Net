@@ -10,6 +10,7 @@ from django.shortcuts import render_to_response
 import json
 import ast
 import datetime
+from dateutil.parser import parse
 
 productsName = []
 imgSrcs = []
@@ -24,7 +25,7 @@ def SignUp(request):
         es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
         
         #Search username
-        search = es.search(index="ad",body={"query": {"match": {'username':username}}})
+        search = es.search(index="ad", doc_type="ad-net", body={"query": {"match": {'username':username}}})
         print search['hits']['total']
         exist = search['hits']['total']
 
@@ -50,8 +51,8 @@ def SignUp(request):
             #Init Category of goods
             data = {json.dumps(categories_goods)}
             print data
-            #sua cho nay can xem lai
-            es.index(index="ad-cate", doc_type="cate", body=categories_goods)
+            #da check
+            es.index(index="ad", doc_type="cate", body=categories_goods)
         else:
             return HttpResponse("user name is existed")
 
@@ -86,7 +87,10 @@ def SignIn(request):
 
     return render(request, "index.html")
 
-#ham test time can xem lai
+def Time(time_current, time2_string):
+    return ((time_current - parse(time2_string)).total_seconds())/60.0
+
+#ham test time da check
 def Goods(request):
     #Date time
     time_current = datetime.datetime.now()
@@ -101,31 +105,63 @@ def Goods(request):
 
     #Search cate by userid
     print "search"
-    # search = es.search(index="ad", doc_type="cate", body={"query": {"match": {'userid':'AV14BeMo-Q5w_qrdaia3'}}})
-    # source = search['hits']['hits'][0]['_source']
-    # time = source['time']
-    # time_mobile = source['time_mobile']
-    # time_laptop = source['time_laptop']
-    # time_toy = source['time_toy']
+    search = es.search(index="ad", doc_type="cate", body={"query": {"match": {'userid':'AV18o-v_-Q5w_qrdaib7'}}})
+    source = search['hits']['hits'][0]['_source']
+    time = source['time']
+    #print "time:", time
+    time_mobile = source['time_mobile']
+    time_laptop = source['time_laptop']
+    time_toy = source['time_toy']
 
+    laptop = source['laptop']
+    toy = source['toy']
+    mobile = source['mobile']
+
+    print "time chenh lech:",((time_current - parse(time_mobile)).total_seconds())/60.0
     time_goods= dict()
     
-    # if(time == 0):
-    time_goods['toy'] = 0
-    time_goods['time_laptop'] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
-    #print "time_goods:",time_goods['time_mobile']
-    time_goods['time_toy'] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
-    time_goods['mobile'] = 0
-    time_goods['laptop'] = 0
-    time_goods['time'] = 1
-    time_goods['userid'] = 'AV14BeMo-Q5w_qrdaia3'
-    #print "time_goods:",time_goods
-    time_goods['time_mobile'] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
-    print "time_goods:",time_goods
+    if(time == 0):
+        time_goods['toy'] = 0
+        time_goods['time_laptop'] = time_current
+        #print "time_goods:",time_goods['time_mobile']
+        time_goods['time_toy'] = time_current
+        time_goods['mobile'] = 1
+        time_goods['laptop'] = 4
+        time_goods['time'] = 1
+        time_goods['userid'] = 'AV18o-v_-Q5w_qrdaib7'
+        #print "time_goods:",time_goods
+        time_goods['time_mobile'] = time_current
+        print "time_goods:",time_goods
+            
+        es.update(index="ad", doc_type="cate", id="AV18o-w9-Q5w_qrdaib8", body={'doc':time_goods})
+        return render(request,"goods.html")
+    if(request.method == 'GET' and request.is_ajax()):
+        #Get category of goods
+        goods = request.GET.get('goods')
+
+        if(goods == 'laptop'):
+            laptop = laptop + 1
+            point = laptop
+        elif (goods == 'toy'):
+            toy = toy + 1
+            point = toy
+        elif (goods == 'mobile'):
+            mobile = mobile + 1
+            point = mobile
+
+        time_goods['toy'] = toy
+        time_goods['time_laptop'] = time_current
+        #print "time_goods:",time_goods['time_mobile']
+        time_goods['time_toy'] = time_current
+        time_goods['mobile'] = mobile
+        time_goods['laptop'] = laptop
+        time_goods['time'] = 1
+        time_goods['userid'] = 'AV18o-v_-Q5w_qrdaib7'
+        #print "time_goods:",time_goods
+        time_goods['time_mobile'] = time_current
+        print "time_goods:",time_goods
+        es.update(index="ad", doc_type="cate", id="AV18o-w9-Q5w_qrdaib8", body={'doc':time_goods})
         
-        #es.delete(index="ad", doc_type="cate", id="AV14BeNP-Q5w_qrdaia4")
-    es.index(index='ad', doc_type='cate', body=time_goods)
-    
     return render(request,"goods.html")
 
 def Detail(request):

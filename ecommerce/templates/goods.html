@@ -8,19 +8,19 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
-        <a href="#" id="ao">Ao</a>
-        <a href="#" id="quan">Quan</a>
-        <a href="#" id="vay">Vay</a>
+        <a href="#" id="ao">Mobile</a>
+        <a href="#" id="quan">Laptop</a>
+        <a href="#" id="vay">Toy</a>
     </body>
 
     <script>
         $(document).ready(function(){
             $('#ao').click(function(){
                 $.ajax({
-                    url: '{% url 'eDetail' %}',
+                    url: '{% url 'eGoods' %}',
                     type: 'get',
                     data: {
-                        goods:'ao',
+                        goods:'mobile',
                     },
                     header: {
                         'Content-Type': 'application/json'
