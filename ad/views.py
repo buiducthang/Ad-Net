@@ -51,6 +51,7 @@ def Get(request):
     #Delete by Id
     #es.delete(index="ad", doc_type="ad-net", id="AV1Y3Q6KxaR1NsDMNVAf")
 
+    
     return render(request,"ad.html",{'imgSrc':"#", 'productName':"Chua co quang cao", 'url': url})
 
 def AjaxRequest(request):
