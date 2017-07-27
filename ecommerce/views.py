@@ -172,10 +172,17 @@ def setAds(request):
         imgSrcs.append(imgSrc)
         print imgSrcs
 
+        ip_mac = Service.Get_IP_MAC(request)
+        mac = ip_mac[1]
+        ip = ip_mac[0]
+
+        Service.Crea
+
         response = HttpResponse('Xong!')
         response.set_cookie('product_name',productsName)
         response.set_cookie('img_src', imgSrcs)
         response.set_cookie('url',url)
+
         return response
 
 def Index(request):
