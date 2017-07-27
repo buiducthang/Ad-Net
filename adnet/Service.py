@@ -28,7 +28,7 @@ def Time(time_current, time2_string):
     return ((time_current - parse(time2_string)).total_seconds())/60.0
 
 #init time and cate
-def Create_User(username, password, macadd):
+def Create_User(username, password, macadd, img_profile):
 
     #Create user
     user = es.index(index="ad", doc_type="ad-net", body={"username":username,"password":password})
@@ -47,7 +47,7 @@ def Create_User(username, password, macadd):
     categories_goods["userid"] = userid
     
     categories_goods['macadd'] = macadd
-
+    categories_goods['img_profile'] = img_profile
     print categories_goods
 
     es.index(index="ad", doc_type="cate", body=categories_goods)
@@ -150,7 +150,7 @@ def Create_Ads(mac_add, cate_name, title, link_img, url):
     data = {"mac":mac_add, "cate":cate_name, "title":title, "img":link_img, "url":url}
     user = es.index(index="ad", doc_type="advertise", body=data)
 
-#Get Ad By Macadd
+#Get Ad By Macadd but not return 0
 def Get_Ads_By_MacAdd(mac_add):
     search = es.search(index="ad", doc_type="advertise", body={"query": {"match": {'mac':mac_add}}})
     check = search['hits']['total']
@@ -175,6 +175,16 @@ def Get_Ads_Id(mac_add):
     rs = search['hits']['hits'][0]['_id']
     return rs
 
+
+#Read File txt
+def Read_File(link_file):
+    img_links = list()
+    file = open(link_file,"r")
+    for line in file:
+        #print line.strip()
+        img_links.append(line.strip())
+    return img_links
+
 if __name__ == "__main__":
     # ads = Get_Ads_By_Cate('laptop')
     # print ads
@@ -182,6 +192,8 @@ if __name__ == "__main__":
     # print Get_Cate_Max(cate)
     # ads = Get_Ads_By_MacAdd("456")
     # print ads["title"]
-    a = Get_Ads_By_MacAdd("456")
-    print a
+    #a = Get_Ads_By_MacAdd("456")
+    #print a
     #Delete_Ads(a)
+    a = Read_File('/home/thuynv/Desktop/users.txt')
+    print a[0]
