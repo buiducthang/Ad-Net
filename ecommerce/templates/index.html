@@ -82,10 +82,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
                                         <div class="facts">
                                             <div class="register">
-                                                <form action="{% url 'eSignIn' %}" method="post"> 
+                                                <form action="{% url 'eSignIn' %}" method="post">
                                                     {% csrf_token %}
-                                                    <input name="acc" placeholder="Account" type="text" >
-                                                    <input name="password" placeholder="Password" type="password" >
+                                                    <input name="acc" placeholder="Account" type="text">
+                                                    <input name="password" placeholder="Password" type="password">
                                                     <div class="sign-up">
                                                         <input type="submit" value="Sign in" />
                                                     </div>
@@ -96,12 +96,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
                                         <div class="facts">
                                             <div class="register">
-                                                <form action="{% url 'eSignUp' %}" method="post"> 
+                                                <form action="{% url 'eSignUp' %}" method="post">
                                                     {% csrf_token %}
                                                     <input placeholder="Name" name="Name" type="text" required="">
                                                     <input placeholder="Account" name="acc" type="text" required="">
                                                     <input placeholder="Password" name="password" type="password" required="">
-                                                    
+
                                                     <div class="sign-up">
                                                         <input type="submit" value="Create Account" />
                                                     </div>
@@ -1216,7 +1216,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     <!-- //banner-bottom1 -->
     <!-- special-deals -->
-    
+
     <!-- //special-deals -->
     <!-- new-products -->
     <div class="new-products">
@@ -1383,25 +1383,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="agileinfo_new_products_grids">
                 {% for productName, imgSrc in ads %}
                 <div class="col-md-3 agileinfo_new_products_grid">
-                    
-                        <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
-                            <div class="hs-wrapper hs-wrapper1">
-                                <img src="{{imgSrc}}" alt=" " class="" />
-                                
-                                <div class="w3_hs_bottom w3_hs_bottom_sub">
-                                    <ul>
-                                        <li>
-                                            <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
+
+                    <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
+                        <div class="hs-wrapper hs-wrapper1">
+                            <img src="{{imgSrc}}" alt=" " class="" />
+
+                            <div class="w3_hs_bottom w3_hs_bottom_sub">
+                                <ul>
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                    </li>
+                                </ul>
                             </div>
-                            <h5><a href="">{{productName}}</a></h5>
-                            
                         </div>
-                    
+                        <h5><a href="">{{productName}}</a></h5>
+
+                    </div>
+
                 </div>
-            {% endfor %}    
+                {% endfor %}
                 <div class="clearfix"> </div>
             </div>
         </div>
@@ -1598,6 +1598,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         productName: productName,
                         imgSrc: imgSrc,
                         url: url,
+                        cate: modalName,
                         csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
                     },
                     header: {
@@ -1623,7 +1624,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     },
                     success: function(e) {
                         console.log(e);
-                        
+
                     },
                     error: function(e) {
                         console.log('submit error ', e);
@@ -1647,6 +1648,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         productName: productName,
                         imgSrc: imgSrc,
                         url: url,
+                        cate: modalName,
                         csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
                     },
                     header: {
@@ -1662,11 +1664,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 })
             })
 
-            $('.toy').click(function(){
+            $('.toy').click(function() {
                 console.log('toy');
             });
 
-            $('.mobile').click(function(){
+            $('.mobile').click(function() {
                 console.log('mobile')
             });
         });

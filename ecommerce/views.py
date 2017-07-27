@@ -163,6 +163,8 @@ def setAds(request):
         productName = request.POST.get('productName')
         
         imgSrc = request.POST.get('imgSrc')
+
+        cate = request.POST.get('cate')
         
         url = base_url + '/'+ request.POST.get('url')
         print url
@@ -176,12 +178,14 @@ def setAds(request):
         mac = ip_mac[1]
         ip = ip_mac[0]
 
-        Service.Crea
+        id_ads = Service.Get_Ads_Id(mac)
+
+        if (id_ads != 0):
+            Service.Delete_Ads(id_ads)
+
+        Service.Create_Ads(mac,cate,productName,imgSrc,url)
 
         response = HttpResponse('Xong!')
-        response.set_cookie('product_name',productsName)
-        response.set_cookie('img_src', imgSrcs)
-        response.set_cookie('url',url)
 
         return response
 
