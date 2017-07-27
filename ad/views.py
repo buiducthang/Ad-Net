@@ -70,3 +70,16 @@ def AjaxRequest(request):
         ajaxData = request.POST.get('ajaxdata')
         print ajaxData
     return HttpResponse(json.dumps(ajaxData), content_type='application/json')
+def Profile(request):
+    es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
+
+    ip_mac = Service.Get_IP_MAC(request)
+    ip = ip_mac[1]
+    mac = ip_mac[0]
+
+    ads = Service.Get_Ads_By_MacAdd(mac)
+    imgSrc = ads['img']
+    productName = ads['title']
+    url = ads['url']
+    cate = ads['cate']
+    return render(request,"display2.html",{'mac':mac,'ip':ip,'imgSrc':imgSrc, 'productName':productName, 'url': url})
