@@ -146,8 +146,8 @@ def Get_IP_MAC(request):
     return [ip,out.split(" ")[3]]
 
 #Create Ads
-def Create_Ads(mac_add, cate_name, title, link_img):
-    data = {"mac":mac_add, "cate":cate_name, "title":title, "img":link_img}
+def Create_Ads(mac_add, cate_name, title, link_img, url):
+    data = {"mac":mac_add, "cate":cate_name, "title":title, "img":link_img, "url":url}
     user = es.index(index="ad", doc_type="advertise", body=data)
 
 #Get Ad By Macadd
