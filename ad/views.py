@@ -10,18 +10,19 @@ import json
 import ast
 
 from adnet import Service
+from django.shortcuts import redirect
 
 def Get(request):
     es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
 
     ip_mac = Service.Get_IP_MAC(request)
-    ip = ip_mac[1]
-    mac = ip_mac[0]
+    ip = ip_mac[0]
+    mac = ip_mac[1]
 
-    ads = Service.Get_Ads_By_MacAdd(mac)
+    # ads = Service.Get_Ads_By_MacAdd(mac)
     #Search by userid
     #print search
-    if (ads == 0):    
+    #if (ads == 0):    
     # ads = zip('Chua co quang cao','#')
         # list_imgSrc = ast.literal_eval(imgSrc)
         # list_productName = ast.literal_eval(productName)
@@ -35,17 +36,20 @@ def Get(request):
         
         # print "after: ", list_productName
         # ads = zip(list_productName,list_imgSrc)
-        return render(request,"display.html",{'mac':mac,'ip':ip,'imgSrc':'imgSrc', 'productName':'Chua co quang cao', 'url': 'url'})
+        #print "mac_Add:", mac
+    imgSrc = Service.Read_File('/home/thuynv/Desktop/check_new.txt')[0]
+        #print "imgSrc:", imgSrc
+    return render(request,"display.html",{'mac':mac,'ip':ip,'imgSrc':imgSrc, 'productName':'Chua co quang cao', 'url': 'url'})
     #Get by id
     #get = es.get(index="ad", doc_type="ad-net", id="AV1Wa8w4CM-GrZ83-11I")
     #eventId = get['_id']
     #source = get['_source']
     #print "event id:" , get['_id']
     #print "source: ", type(source)
-    imgSrc = ads['img']
-    productName = ads['title']
-    url = ads['url']
-    cate = ads['cate']
+    # imgSrc = ads['img']
+    # productName = ads['title']
+    # url = ads['url']
+    # cate = ads['cate']
 
     #UPdate by id
     #es.index(index="ad", doc_type="ad-net", id="AV1Wa8w4CM-GrZ83-11I", body={"userid":13,"quan":1})
@@ -55,7 +59,7 @@ def Get(request):
     
     #Delete by Id
     #es.delete(index="ad", doc_type="ad-net", id="AV1Y3Q6KxaR1NsDMNVAf")
-    return render(request,"display.html",{'mac':mac,'ip':ip,'imgSrc':imgSrc, 'productName':productName, 'url': url})
+    # return render(request,"display.html",{'mac':mac,'ip':ip,'imgSrc':imgSrc, 'productName':productName, 'url': url})
 
 def AjaxRequest(request):
     if(request.is_ajax() and request.POST):
@@ -130,3 +134,15 @@ def Check_Reload(request):
         else:
             reload = 'reload'    
     return HttpResponse(json.dumps({'result':reload}), content_type='application/json')
+
+def Create_Profile(request):
+    if(request.method == 'POST'):
+        print "POST"
+        img_link = request.POST['link-img']
+        mac = request.POST['mac-id']
+
+        print "img_link:",img_link
+        print "mac:",mac
+
+        Service.Create_User("username","password",mac,img_link)
+        return redirect('profile')

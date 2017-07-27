@@ -33,27 +33,44 @@
     </nav>
 
     <div class="container" style="margin-top:4%">
-
-        <div class="col-sm-5">
-            <center>
-                <img src="http://dantricdn.com/l7FOwOOAx7wHCOfxvVgs/Image/2013/12/3-ea15c.jpg" alt="" style="width:250px;height:300px;">
-            </center>
-            <div class="row">
+        <form action="{% url 'create_profile' %}" method="post">
+            {% csrf_token %}
+            <div class="col-sm-5">
                 <center>
-                    Name: Unknown
+                    <img src="{{imgSrc}}" alt="" style="width:250px;height:300px;">
+                    <input type="hidden" id="link-img" name="link-img" value="{{imgSrc}}">
+                    <input type="hidden" value="{{check_button}}">
                 </center>
-
-            </div>
-            <center>
-
-                <div class="input-group">
-
-                    <label for="mac-id" class="col-sm-2">MAC Address</label>
-                    <input type="text" class="form-control" id="mac-id" placeholder="0000-0000-0000-0000">
+                <div class="row">
+                    <center>
+                        Name: Unknown
+                    </center>
 
                 </div>
-            </center>
-        </div>
+                <center>
+
+                    <div class="input-group">
+
+                        <label for="mac-id" class="col-sm-2">MAC Address</label>
+                        <input type="text" class="form-control" id="mac-id" name="mac-id" placeholder="0000-0000-0000-0000" value="{{mac}}">
+
+                    </div>
+                </center>
+
+                <center>
+                    Đây có phải ảnh của bạn không ?
+                </center>
+                <center>
+                    <button class="btn btn-primary">
+                        Yes
+                    </button>
+                    <a class="btn btn-danger" href="#">
+                        No
+                    </a>
+                </center>
+            </div>
+        </form>
+        
         <div class="panel panel-default col-sm-5 col-sm-offset-1">
             <div class="panel-heading">
                 <h3 class="panel-title">Advertisement</h3>
