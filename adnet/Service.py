@@ -27,7 +27,7 @@ def Time(time_current, time2_string):
     return ((time_current - parse(time2_string)).total_seconds())/60.0
 
 #init time and cate
-def Create_User(username, password):
+def Create_User(username, password, macadd):
 
     #Create user
     user = es.index(index="ad", doc_type="ad-net", body={"username":username,"password":password})
@@ -44,7 +44,9 @@ def Create_User(username, password):
     categories_goods["time_laptop"] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
     categories_goods["time_toy"] = time_current.strftime("%Y-%m-%d %H:%M:%S").replace(" ","T")
     categories_goods["userid"] = userid
-            
+    
+    categories_goods['macadd'] = macadd
+
     print categories_goods
 
     es.index(index="ad", doc_type="cate", body=categories_goods)
