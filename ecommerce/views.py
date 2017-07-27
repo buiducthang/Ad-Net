@@ -180,17 +180,6 @@ def setAds(request):
 
 def Index(request):
     #Get Mac add
-    x_f = request.META.get('HTTP_X_FORWARDED_FOR')
-    if x_f:
-        ip = x_f.split(',')[0]
-    else:
-        ip = request.META.get('REMOTE_ADDR')
-    print ip
-
-    a = subprocess.call(["ping",ip,"-c","1"])
-    mac_add = subprocess.Popen(["arp","-a",ip], stdout=subprocess.PIPE)
-    out, err = mac_add.communicate()
-    print "mac:" ,out.split(" ")[3]
 
     #Cookie for ad
     imgSrc = request.COOKIES.get('img_src','null')

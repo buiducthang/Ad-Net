@@ -2,6 +2,7 @@ from elasticsearch import Elasticsearch
 import datetime
 import random
 import operator
+import subprocess
 
 #Init variable
 time_current = datetime.datetime.now()
@@ -128,6 +129,19 @@ def Get_Cate_By_UserId(userid):
 def Get_Cate_Max(dict_cate):
     key_max = max(dict_cate.iteritems(), key=operator.itemgetter(1))[0]
     return key_max
+
+#Get MAC address
+def Get_IP_MAC(request):
+    x_f = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_f:
+        ip = x_f.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+
+    a = subprocess.call(["ping",ip,"-c","1"])
+    mac_add = subprocess.Popen(["arp","-a",ip], stdout=subprocess.PIPE)
+    out, err = mac_add.communicate()
+    return [ip,out.split(" ")[3]]
     
 if __name__ == "__main__":
     # ads = Get_Ads_By_Cate('laptop')

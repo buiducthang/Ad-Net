@@ -9,8 +9,15 @@ from django.http import *
 import json
 import ast
 
+from adnet import Service
+
 def Get(request):
     es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
+
+    ip_mac = Service.Get_IP_MAC(request)
+    ip = ip_mac[1]
+    mac = ip_mac[0]
+    print 'mac: ',mac
 
     #Search by userid
     search = es.search(index="ad",body={"query": {"match": {'userid':'13'}}})
@@ -21,6 +28,7 @@ def Get(request):
     url = request.COOKIES.get('url','Chua co quang cao')
     
     ads = zip('Chua co quang cao','#')
+    print 'productName: ', imgSrc
     if(productName != 'Chua co quang cao'):
         list_imgSrc = ast.literal_eval(imgSrc)
         list_productName = ast.literal_eval(productName)
@@ -34,7 +42,7 @@ def Get(request):
         
         print "after: ", list_productName
         ads = zip(list_productName,list_imgSrc)
-        return render(request,"ad.html",{'imgSrc':list_imgSrc[-1], 'productName':list_productName[-1], 'url': url})
+        return render(request,"display.html",{'mac':mac,'ip':ip,'imgSrc':imgSrc, 'productName':productName, 'url': url})
     #Get by id
     #get = es.get(index="ad", doc_type="ad-net", id="AV1Wa8w4CM-GrZ83-11I")
     #eventId = get['_id']
@@ -52,7 +60,7 @@ def Get(request):
     #es.delete(index="ad", doc_type="ad-net", id="AV1Y3Q6KxaR1NsDMNVAf")
 
     
-    return render(request,"ad.html",{'imgSrc':"#", 'productName':"Chua co quang cao", 'url': url})
+    return render(request,"display.html",{'mac':mac,'ip':ip,'imgSrc':imgSrc, 'productName':productName, 'url': url})
 
 def AjaxRequest(request):
     if(request.is_ajax() and request.POST):
