@@ -153,7 +153,9 @@ def Create_Ads(mac_add, cate_name, title, link_img, url):
 #Get Ad By Macadd
 def Get_Ads_By_MacAdd(mac_add):
     search = es.search(index="ad", doc_type="advertise", body={"query": {"match": {'mac':mac_add}}})
-    #print search['hits']['hits'][0]['_source']
+    check = search['hits']['total']
+    if check == 0:
+        return 0
     rs = search['hits']['hits'][0]['_source']
     #print type(rs)
     return rs
@@ -180,6 +182,6 @@ if __name__ == "__main__":
     # print Get_Cate_Max(cate)
     # ads = Get_Ads_By_MacAdd("456")
     # print ads["title"]
-    a = Get_Ads_Id("456")
+    a = Get_Ads_By_MacAdd("456")
     print a
     #Delete_Ads(a)
