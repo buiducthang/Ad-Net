@@ -27,21 +27,21 @@ def Get(request):
     productName = request.COOKIES.get('product_name','Chua co quang cao')
     url = request.COOKIES.get('url','Chua co quang cao')
     
-    ads = zip('Chua co quang cao','#')
+    # ads = zip('Chua co quang cao','#')
     print 'productName: ', imgSrc
     if(productName != 'Chua co quang cao'):
-        list_imgSrc = ast.literal_eval(imgSrc)
-        list_productName = ast.literal_eval(productName)
+        # list_imgSrc = ast.literal_eval(imgSrc)
+        # list_productName = ast.literal_eval(productName)
 
-        print "length list imgSrc: " ,len(list_imgSrc)
+        # print "length list imgSrc: " ,len(list_imgSrc)
 
-        print "first: ", list_productName
-        if(len(list_imgSrc) > 4 and len(list_productName) > 4):
-            list_imgSrc = list_imgSrc[1:]
-            list_productName = list_productName[1:]
+        # print "first: ", list_productName
+        # if(len(list_imgSrc) > 4 and len(list_productName) > 4):
+        #     list_imgSrc = list_imgSrc[1:]
+        #     list_productName = list_productName[1:]
         
-        print "after: ", list_productName
-        ads = zip(list_productName,list_imgSrc)
+        # print "after: ", list_productName
+        # ads = zip(list_productName,list_imgSrc)
         return render(request,"display.html",{'mac':mac,'ip':ip,'imgSrc':imgSrc, 'productName':productName, 'url': url})
     #Get by id
     #get = es.get(index="ad", doc_type="ad-net", id="AV1Wa8w4CM-GrZ83-11I")
