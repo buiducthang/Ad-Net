@@ -146,14 +146,16 @@ def Get_IP_MAC(request):
     return [ip,out.split(" ")[3]]
 
 #Create Ads
-def Create_Ads(mac_add, cate_name, title, link_img):
-    data = {"mac":mac_add, "cate":cate_name, "title":title, "img":link_img}
+def Create_Ads(mac_add, cate_name, title, link_img, url):
+    data = {"mac":mac_add, "cate":cate_name, "title":title, "img":link_img, "url":url}
     user = es.index(index="ad", doc_type="advertise", body=data)
 
 #Get Ad By Macadd
 def Get_Ads_By_MacAdd(mac_add):
     search = es.search(index="ad", doc_type="advertise", body={"query": {"match": {'mac':mac_add}}})
-    #print search['hits']['hits'][0]['_source']
+    check = search['hits']['total']
+    if check == 0:
+        return 0
     rs = search['hits']['hits'][0]['_source']
     #print type(rs)
     return rs
@@ -163,10 +165,13 @@ def Delete_Ads(id_ads):
     dele = es.delete(index="ad", doc_type="advertise", id=id_ads)
     #print dele['result']
     return dele['result']
-#Get Id Ad
+
+#Get Id Ad but not return 0
 def Get_Ads_Id(mac_add):
     search = es.search(index="ad", doc_type="advertise", body={"query": {"match": {'mac':mac_add}}})
-    #print search['hits']['hits'][0]['_id']
+    check = search['hits']['total']
+    if check == 0:
+        return 0
     rs = search['hits']['hits'][0]['_id']
     return rs
 
@@ -177,6 +182,6 @@ if __name__ == "__main__":
     # print Get_Cate_Max(cate)
     # ads = Get_Ads_By_MacAdd("456")
     # print ads["title"]
-    a = Get_Ads_Id("123")
-    #print a
-    Delete_Ads(a)
+    a = Get_Ads_By_MacAdd("456")
+    print a
+    #Delete_Ads(a)
