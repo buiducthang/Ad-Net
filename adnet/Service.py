@@ -182,6 +182,12 @@ if __name__ == "__main__":
     # print Get_Cate_Max(cate)
     # ads = Get_Ads_By_MacAdd("456")
     # print ads["title"]
-    a = Get_Ads_By_MacAdd("456")
-    print a
+    #a = Get_Ads_By_MacAdd("456")
+    #print a
     #Delete_Ads(a)
+
+    es = Elasticsearch([{'host': '10.12.11.161', 'port': 9200}])
+    search = es.search(index="ad", doc_type="check", body={"query": {"match": {'check':"false"}}})
+
+    check = search['hits']['total']
+    print "check:",check
